@@ -4,8 +4,9 @@
   "description": "This is a solution to the [Pomodoro app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/pomodoro-app-KBFnycJ6G). Frontend Mentor challenges help you improve your coding skills by building realistic projects.",
   "main": "index.js",
   "scripts": {
-    "sass": "sass sass/styles.scss css/styles.css --watch",
-    "postcss:watch": "postcss css/styles.css --dir css/min-styles.css --watch"
+    "dev": "concurrently npm:watch:*",
+    "watch:sass":    "sass sass/styles.scss css/styles.css --watch",
+    "watch:postcss": "postcss css/styles.css --output css/min-styles.css --watch"
   },
   "repository": {
     "type": "git",
