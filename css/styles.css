@@ -307,4 +307,16 @@ template {
   display: none;
 }
 
+:root {
+  --font-family-primary: "Kumbh Sans", sans-serif;
+  --font-family-secondary: "Roboto Slab", serif;
+  --font-family-tertiary: "Space Mono", monospace;
+  --font-weight--regular: 400;
+  --font-weight--bold: 700;
+}
+
+body {
+  font-family: var(--font-family-primary);
+}
+
 /*# sourceMappingURL=styles.css.map */

@@ -1,3 +1,11 @@
+:root {
+    // Font Family
+    --font-family-primary   : 'Kumbh Sans',  sans-serif;
+    --font-family-secondary : 'Roboto Slab', serif;
+    --font-family-tertiary  : 'Space Mono',  monospace;
 
-//Font Weights
-$font-weight--bold         : 700;
+    // Font Weight
+    --font-weight--regular  : 400;
+    --font-weight--bold     : 700;
+}
+
