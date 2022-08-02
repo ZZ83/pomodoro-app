@@ -313,6 +313,7 @@ template {
   --font-family-tertiary: "Space Mono", monospace;
   --font-weight--regular: 400;
   --font-weight--bold: 700;
+  --font-spacing: -5px;
 }
 
 body {
@@ -320,7 +321,14 @@ body {
 }
 
 h1 {
-  font-size: 6.25rem;
+  font-size: 5rem;
+  line-height: 7.5rem;
+  letter-spacing: var(--font-spacing);
+}
+@media (min-width: 768px) {
+  h1 {
+    font-size: 6.25rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

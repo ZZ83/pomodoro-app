@@ -5,6 +5,11 @@ body {
 }
 
 h1 {
-    font-size: rem(100px);
+    font-size: rem(80px);
+    line-height: rem(120px);
+    letter-spacing: var(--font-spacing);
+    @include mq(medium) {
+        font-size: rem(100px);
+    }
 }
 
