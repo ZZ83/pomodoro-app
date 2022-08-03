@@ -1,6 +1,13 @@
 @use '../abstracts' as *;
 
 .cycle {
+    margin: auto;
     width: rem(327px);
     height: rem(63px);
+    border-radius: 31.5px;
+    background-color: var(--mirage);
+    @include mq(medium) {
+        width: rem(373px); 
+        height: rem(63px);
+    }
 }
