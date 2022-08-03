@@ -314,6 +314,14 @@ template {
   --font-weight--regular: 400;
   --font-weight--bold: 700;
   --font-spacing: -5px;
+  --white: #FFFFFF;
+  --mirage: #161932;
+  --port-gore: #1E213F;
+  --periwinkle: #D7E0FF;
+  --white-lilac: #EFF1FA;
+  --froly: #F87070;
+  --malibu: #70F3F8;
+  --heliotrope: #D881F8;
 }
 
 body {
