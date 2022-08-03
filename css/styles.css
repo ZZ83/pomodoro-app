@@ -322,6 +322,9 @@ template {
   --froly: #F87070;
   --malibu: #70F3F8;
   --heliotrope: #D881F8;
+  --theme-1: var(--froly);
+  --theme-2: var(--malibu);
+  --theme-3: var(--heliotrope);
 }
 
 .header, .cycle {
@@ -460,6 +463,16 @@ button {
     width: 7.5rem;
     height: 3rem;
   }
+}
+.cycle-btn:hover {
+  color: var(--periwinkle);
+  opacity: initial;
+}
+
+.cycle-active {
+  color: var(--port-gore);
+  opacity: initial;
+  background-color: var(--theme-1);
 }
 
 /*# sourceMappingURL=styles.css.map */

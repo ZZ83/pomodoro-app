@@ -11,4 +11,8 @@
         width: rem(120px); 
         height: rem(48px);
     }
+    &:hover {
+        color: var(--periwinkle);
+        opacity: initial;
+    }
 }

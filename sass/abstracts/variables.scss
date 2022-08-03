@@ -8,6 +8,7 @@
     --font-weight--regular  : 400;
     --font-weight--bold     : 700;
 
+    // Font Spacing
     --font-spacing: -5px;
 
     // Descriptive Base Colors
@@ -17,22 +18,13 @@
     --periwinkle  : #D7E0FF;
     --white-lilac : #EFF1FA;
     
+    // Theme Colors
     --froly       : #F87070; 
     --malibu      : #70F3F8;
     --heliotrope  : #D881F8;
-    
-    
+
+    // Color Theme Usage
+    --theme-1 : var(--froly);
+    --theme-2 : var(--malibu);
+    --theme-3 : var(--heliotrope);
 }
-
-// Descriptive Base Colors
-$fountain-blue  : #52bab3;
-$emerald        : #5ece7f;
-$sunglo         : #e67478;
-$coral          : #ff784f;
-$purple-majesty : #9279c3;
-$scooter        : #39add1;
-
-// Color Usage
-$color-primary   : $fountain-blue;
-$color-secondary : $scooter;
-$color-accent    : $emerald;
