@@ -22,3 +22,12 @@ h2 {
     }
 }
 
+h3 {
+    font-size: rem(14px);
+    line-height: rem(19px);
+    letter-spacing: rem(15px);
+    text-transform: uppercase;
+    @include mq(medium) {
+        font-size: rem(16px);
+    }
+}
