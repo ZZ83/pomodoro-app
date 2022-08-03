@@ -369,10 +369,30 @@ h4 {
 
 h5 {
   font-size: 0.75rem;
+  line-height: 0.875rem;
 }
 
 input {
   font-size: 0.875rem;
+  line-height: 1.125rem;
+}
+
+.font-btn {
+  font-size: 0.9375rem;
+}
+
+.cycle-btn {
+  font-size: 0.75rem;
+}
+@media (min-width: 768px) {
+  .cycle-btn {
+    font-size: 0.8125rem;
+  }
+}
+@media (min-width: 1440px) {
+  .cycle-btn {
+    font-size: 0.875rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

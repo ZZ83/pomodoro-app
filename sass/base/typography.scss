@@ -45,8 +45,24 @@ h4 {
 
 h5 {
     font-size: rem(12px);
+    line-height: rem(14px);
 }
 
 input {
     font-size: rem(14px);
+    line-height: rem(18px);
+}
+
+.font-btn {
+    font-size: rem(15px);
+}
+
+.cycle-btn {
+    font-size: rem(12px);
+    @include mq(medium) {
+        font-size: rem(13px);
+    }
+    @include mq(large) {
+        font-size: rem(14px);
+    }
 }
