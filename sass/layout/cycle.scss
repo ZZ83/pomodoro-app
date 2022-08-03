@@ -1,0 +1,27 @@
+@use '../abstracts' as *;
+
+.cycle {
+    margin: auto;
+    width: rem(327px);
+    height: rem(63px);
+    border-radius: 31.5px;
+    background-color: var(--mirage);
+    @extend %flex-center;
+    @include mq(medium) {
+        width: rem(373px); 
+        height: rem(63px);
+    }
+}
+
+.cycle-btn {
+    cursor: pointer;
+    width: rem(105px);
+    height: rem(48px);
+    border-radius: 26.5px;
+    color: var(--periwinkle);
+    opacity: 0.4;
+    @include mq(medium) {
+        width: rem(120px); 
+        height: rem(48px);
+    }
+}
