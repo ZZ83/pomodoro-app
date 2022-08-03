@@ -330,6 +330,10 @@ template {
   justify-content: center;
 }
 
+.btn {
+  border-radius: 26.5px;
+}
+
 *,
 *:after,
 *:before {
@@ -419,20 +423,6 @@ button {
   }
 }
 
-.cycle {
-  margin: auto;
-  width: 20.4375rem;
-  height: 3.9375rem;
-  border-radius: 31.5px;
-  background-color: var(--mirage);
-}
-@media (min-width: 768px) {
-  .cycle {
-    width: 23.3125rem;
-    height: 3.9375rem;
-  }
-}
-
 .header {
   height: 6.25rem;
 }
@@ -444,6 +434,24 @@ button {
 @media (min-width: 1440px) {
   .header {
     height: 8.4375rem;
+  }
+}
+
+.btn {
+  background-color: red;
+}
+
+.cycle {
+  margin: auto;
+  width: 20.4375rem;
+  height: 3.9375rem;
+  border-radius: 31.5px;
+  background-color: var(--mirage);
+}
+@media (min-width: 768px) {
+  .cycle {
+    width: 23.3125rem;
+    height: 3.9375rem;
   }
 }
 
