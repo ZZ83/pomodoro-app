@@ -60,9 +60,6 @@ input {
 .cycle-btn {
     font-size: rem(12px);
     @include mq(medium) {
-        font-size: rem(13px);
-    }
-    @include mq(large) {
         font-size: rem(14px);
     }
 }

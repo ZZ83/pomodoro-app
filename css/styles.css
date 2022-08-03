@@ -386,11 +386,6 @@ input {
 }
 @media (min-width: 768px) {
   .cycle-btn {
-    font-size: 0.8125rem;
-  }
-}
-@media (min-width: 1440px) {
-  .cycle-btn {
     font-size: 0.875rem;
   }
 }
