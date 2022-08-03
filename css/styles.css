@@ -324,6 +324,12 @@ template {
   --heliotrope: #D881F8;
 }
 
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 *,
 *:after,
 *:before {
@@ -410,9 +416,6 @@ input {
 
 .header {
   height: 6.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 @media (min-width: 768px) {
   .header {

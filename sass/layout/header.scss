@@ -1,9 +1,7 @@
 @use '../abstracts' as *;
 .header {
     height: rem(100px);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    @extend %flex-center;
     @include mq(medium) {
         height: rem(165px);
     }
