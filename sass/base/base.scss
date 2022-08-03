@@ -1,6 +1,16 @@
 @use '../abstracts' as *;
 
-body {
+*,
+*:after,
+*:before {
+  	box-sizing: border-box;
+}
+
+html {
+    background-color: var(--port-gore);
+}
+
+body { 
     font-weight: var(--font-weight--bold);
     font-family: var(--font-family-primary);
 }
