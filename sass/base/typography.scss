@@ -1,6 +1,7 @@
 @use '../abstracts' as *;
 
 body {
+    font-weight: var(--font-weight--bold);
     font-family: var(--font-family-primary);
 }
 
@@ -10,6 +11,14 @@ h1 {
     letter-spacing: var(--font-spacing);
     @include mq(medium) {
         font-size: rem(100px);
+    }
+}
+
+h2 {
+    font-size: rem(20px);
+    line-height: rem(34px);
+    @include mq(medium) {
+        font-size: rem(28px);
     }
 }
 

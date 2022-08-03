@@ -317,6 +317,7 @@ template {
 }
 
 body {
+  font-weight: var(--font-weight--bold);
   font-family: var(--font-family-primary);
 }
 
@@ -328,6 +329,16 @@ h1 {
 @media (min-width: 768px) {
   h1 {
     font-size: 6.25rem;
+  }
+}
+
+h2 {
+  font-size: 1.25rem;
+  line-height: 2.125rem;
+}
+@media (min-width: 768px) {
+  h2 {
+    font-size: 1.75rem;
   }
 }
 
