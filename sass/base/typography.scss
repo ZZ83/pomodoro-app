@@ -31,3 +31,14 @@ h3 {
         font-size: rem(16px);
     }
 }
+
+h4 {
+    font-size: rem(11px);
+    line-height: rem(16px);
+    letter-spacing: rem(4.23px);
+    text-transform: uppercase;
+    @include mq(medium) {
+        font-size: rem(13px);
+        letter-spacing: rem(5px);
+    }
+}

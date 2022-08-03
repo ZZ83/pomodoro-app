@@ -354,4 +354,17 @@ h3 {
   }
 }
 
+h4 {
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  letter-spacing: 0.264375rem;
+  text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  h4 {
+    font-size: 0.8125rem;
+    letter-spacing: 0.3125rem;
+  }
+}
+
 /*# sourceMappingURL=styles.css.map */
