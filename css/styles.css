@@ -401,6 +401,11 @@ input {
   line-height: 1.125rem;
 }
 
+button {
+  border: none;
+  background: none;
+}
+
 .font-btn {
   font-size: 0.9375rem;
 }
