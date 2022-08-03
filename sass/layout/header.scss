@@ -1,3 +1,13 @@
+@use '../abstracts' as *;
 .header {
-    background-color: red;
+    height: rem(100px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include mq(medium) {
+        height: rem(165px);
+    }
+    @include mq(large) {
+        height: rem(135px);
+    }
 }
