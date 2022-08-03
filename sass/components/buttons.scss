@@ -1,6 +1,0 @@
-@use '../abstracts' as *;
-
-.btn {
-    background-color: red;
-    @extend %main-radius;
-}
