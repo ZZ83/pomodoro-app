@@ -327,7 +327,7 @@ template {
   --theme-3: var(--heliotrope);
 }
 
-.header, .cycle {
+.time-section, .time-section__background, .progress-bar, .header, .cycle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -370,6 +370,9 @@ h2 {
 }
 
 h3 {
+  margin: 0;
+  padding: 0;
+  color: var(--periwinkle);
   font-size: 0.875rem;
   line-height: 1.1875rem;
   letter-spacing: 0.9375rem;
@@ -467,6 +470,45 @@ button {
 .cycle-btn:hover {
   color: var(--periwinkle);
   opacity: initial;
+}
+
+.time-section {
+  color: var(--periwinkle);
+  margin: auto;
+  width: 18.75rem;
+  height: 18.75rem;
+  border-radius: 50%;
+  background: linear-gradient(315deg, #2E325A 0%, #0E112A 100%);
+  box-shadow: -50px -50px 100px #272C5A, 50px 50px 100px #121530;
+  text-align: center;
+}
+.time-section__background {
+  width: 16.7375rem;
+  height: 16.7375rem;
+  background-color: var(--mirage);
+  border-radius: 50%;
+}
+
+.progress-bar {
+  width: 15.503125rem;
+  height: 15.503125rem;
+  stroke: var(--theme-1);
+  transform: rotate(-90deg);
+}
+.progress-bar__svg {
+  width: 100%;
+  height: 100%;
+}
+.progress-bar__circle {
+  stroke-dasharray: 742;
+  stroke-dashoffset: 742;
+  stroke-linecap: round;
+  animation: dash 1s linear forwards;
+}
+@keyframes dash {
+  to {
+    stroke-dashoffset: 0;
+  }
 }
 
 .cycle-active {
