@@ -327,7 +327,7 @@ template {
   --theme-3: var(--heliotrope);
 }
 
-.time-section, .time-section__background, .progress-bar, .header, .cycle {
+.progress-bar, .time-section, .time-section__background, .header, .cycle {
   display: flex;
   align-items: center;
   justify-content: center;
