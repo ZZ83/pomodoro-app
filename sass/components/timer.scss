@@ -6,10 +6,6 @@
     @extend %flex-center;
     &__time {
         display: flex;
-        margin-top: rem(10px);
-        @include mq(medium) {
-            margin-top: rem(20px);
-        }
     }
     &__btn {
         margin: 0;

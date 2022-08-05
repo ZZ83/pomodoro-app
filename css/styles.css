@@ -313,7 +313,7 @@ template {
   --font-family-tertiary: "Space Mono", monospace;
   --font-weight--regular: 400;
   --font-weight--bold: 700;
-  --font-spacing: -5px;
+  --font-spacing: -4px;
   --white: #FFFFFF;
   --mirage: #161932;
   --port-gore: #1E213F;
@@ -562,12 +562,6 @@ button {
 }
 .timer__time {
   display: flex;
-  margin-top: 0.625rem;
-}
-@media (min-width: 768px) {
-  .timer__time {
-    margin-top: 1.25rem;
-  }
 }
 .timer__btn {
   margin: 0;
