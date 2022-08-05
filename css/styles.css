@@ -412,6 +412,7 @@ input {
 }
 
 button {
+  cursor: pointer;
   border: none;
   background: none;
 }
@@ -493,7 +494,6 @@ button {
 }
 
 .cycle-btn {
-  cursor: pointer;
   width: 6.5625rem;
   height: 3rem;
   border-radius: 26.5px;
@@ -567,7 +567,6 @@ button {
 .timer__btn {
   margin: 0;
   padding: 0.3125rem 0 0;
-  cursor: pointer;
 }
 @media (min-width: 768px) {
   .timer__btn {
