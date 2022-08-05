@@ -49,6 +49,9 @@ h3 {
     @include mq(medium) {
         font-size: rem(16px);
     }
+    &:hover {
+        color: var(--theme);
+    }
 }
 
 h4 {
