@@ -453,25 +453,6 @@ button {
   }
 }
 
-.cycle-btn {
-  cursor: pointer;
-  width: 6.5625rem;
-  height: 3rem;
-  border-radius: 26.5px;
-  color: var(--periwinkle);
-  opacity: 0.4;
-}
-@media (min-width: 768px) {
-  .cycle-btn {
-    width: 7.5rem;
-    height: 3rem;
-  }
-}
-.cycle-btn:hover {
-  color: var(--periwinkle);
-  opacity: initial;
-}
-
 .time-section {
   color: var(--periwinkle);
   margin: 3rem auto 4.9375rem;
@@ -500,6 +481,25 @@ button {
     width: 22.875rem;
     height: 22.875rem;
   }
+}
+
+.cycle-btn {
+  cursor: pointer;
+  width: 6.5625rem;
+  height: 3rem;
+  border-radius: 26.5px;
+  color: var(--periwinkle);
+  opacity: 0.4;
+}
+@media (min-width: 768px) {
+  .cycle-btn {
+    width: 7.5rem;
+    height: 3rem;
+  }
+}
+.cycle-btn:hover {
+  color: var(--periwinkle);
+  opacity: initial;
 }
 
 .progress-bar {
