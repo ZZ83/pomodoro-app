@@ -1,0 +1,11 @@
+@use '../abstracts' as *;
+
+.settings-btn {
+    display: block;
+    margin: 0 auto;
+    fill: var(--periwinkle);
+    opacity: 0.5;
+    &:hover {
+        opacity: 10;
+    }
+}

@@ -581,6 +581,16 @@ button {
   padding: 0 0.3125rem;
 }
 
+.settings-btn {
+  display: block;
+  margin: 0 auto;
+  fill: var(--periwinkle);
+  opacity: 0.5;
+}
+.settings-btn:hover {
+  opacity: 10;
+}
+
 .cycle-active {
   color: var(--port-gore);
   opacity: initial;
