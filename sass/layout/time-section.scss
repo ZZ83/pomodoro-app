@@ -1,12 +1,12 @@
 @use '../abstracts' as *;
 
 .time-section {
+    position: relative;
     color: var(--periwinkle);
     margin: rem(48px) auto rem(79px);
     width:  rem(300px);
     height: rem(300px);
     border-radius: 50%;
-    text-align: center;
     background: linear-gradient(315deg, #2E325A 0%, #0E112A 100%);
     box-shadow: -50px -50px 100px #272C5A, 50px 50px 100px #121530;
     @extend %flex-center;

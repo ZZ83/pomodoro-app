@@ -18,7 +18,7 @@ body {
 h1 {
     font-size:   rem(80px);
     line-height: rem(120px);
-    letter-spacing: var(--font-spacing);
+    // letter-spacing: var(--font-spacing);
     @include mq(medium) {
         font-size: rem(100px);
     }
@@ -39,6 +39,7 @@ h3 {
     font-size:   rem(14px);
     line-height: rem(19px);
     letter-spacing: rem(15px);
+    margin-right: rem(-15px);
     text-transform: uppercase;
     @include mq(medium) {
         font-size: rem(16px);

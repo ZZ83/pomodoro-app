@@ -322,12 +322,10 @@ template {
   --froly: #F87070;
   --malibu: #70F3F8;
   --heliotrope: #D881F8;
-  --theme-1: var(--froly);
-  --theme-2: var(--malibu);
-  --theme-3: var(--heliotrope);
+  --theme: var(--heliotrope);
 }
 
-.progress-bar, .time-section, .time-section__background, .header, .cycle {
+.timer, .progress-bar, .time-section, .time-section__background, .header, .cycle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -351,7 +349,6 @@ body {
 h1 {
   font-size: 5rem;
   line-height: 7.5rem;
-  letter-spacing: var(--font-spacing);
 }
 @media (min-width: 768px) {
   h1 {
@@ -376,6 +373,7 @@ h3 {
   font-size: 0.875rem;
   line-height: 1.1875rem;
   letter-spacing: 0.9375rem;
+  margin-right: -0.9375rem;
   text-transform: uppercase;
 }
 @media (min-width: 768px) {
@@ -454,12 +452,12 @@ button {
 }
 
 .time-section {
+  position: relative;
   color: var(--periwinkle);
   margin: 3rem auto 4.9375rem;
   width: 18.75rem;
   height: 18.75rem;
   border-radius: 50%;
-  text-align: center;
   background: linear-gradient(315deg, #2E325A 0%, #0E112A 100%);
   box-shadow: -50px -50px 100px #272C5A, 50px 50px 100px #121530;
 }
@@ -511,7 +509,7 @@ button {
   width: 15.503125rem;
   height: 15.503125rem;
   fill: transparent;
-  stroke: var(--theme-1);
+  stroke: var(--theme);
   stroke-width: 0.625rem;
   stroke-linecap: round;
   transform: rotate(-90deg);
@@ -544,14 +542,29 @@ button {
 }
 @keyframes dash {
   to {
-    stroke-dashoffset: 0;
+    stroke-dashoffset: 250;
   }
+}
+
+.timer {
+  position: absolute;
+  flex-direction: column;
+}
+.timer__time {
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+}
+.timer__btn {
+  margin: 0;
+  padding: 0.625rem 0 0;
+  cursor: pointer;
 }
 
 .cycle-active {
   color: var(--port-gore);
   opacity: initial;
-  background-color: var(--theme-1);
+  background-color: var(--theme);
 }
 
 /*# sourceMappingURL=styles.css.map */

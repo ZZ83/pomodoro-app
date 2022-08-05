@@ -1,0 +1,17 @@
+@use '../abstracts' as *;
+
+.timer {
+    position: absolute;
+    flex-direction: column;
+    @extend %flex-center;
+    &__time {
+        margin: 0;
+        padding: 0;
+        margin-top: 10px;
+    }
+    &__btn {
+        margin: 0;
+        padding: rem(10px) 0 0;
+        cursor: pointer;
+    }
+}

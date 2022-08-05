@@ -4,7 +4,7 @@
     width:  rem(248.05px);
     height: rem(248.05px);
     fill: transparent;
-    stroke: var(--theme-1);
+    stroke: var(--theme);
     stroke-width: rem(10px);
     stroke-linecap: round;
     transform: rotate(-90deg);
@@ -32,7 +32,7 @@
     }
     @keyframes dash {
         to {
-          stroke-dashoffset: 0;
+          stroke-dashoffset: 250;
         }
     }
 }
