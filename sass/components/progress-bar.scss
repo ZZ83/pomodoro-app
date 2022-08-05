@@ -3,18 +3,32 @@
 .progress-bar {
     width:  rem(248.05px);
     height: rem(248.05px);
+    fill: transparent;
     stroke: var(--theme-1);
+    stroke-width: rem(10px);
+    stroke-linecap: round;
     transform: rotate(-90deg);
     @extend %flex-center;
+    @include mq(medium) {
+        width:  rem(339px);
+        height: rem(339px);
+    }
     &__svg {
         width:  100%;
         height: 100%;
     }
-    &__circle {
-        stroke-dasharray:  742;
-        stroke-dashoffset: 742;
-        stroke-linecap: round;
-        animation: dash 1s linear forwards;
+    &__circle,
+    &__circle--medium {
+        animation: dash linear forwards;
+        @include mq(medium) {
+            display: none;
+        }
+    }
+    &__circle--medium {
+        display: none;
+        @include mq(medium) {
+            display: initial;
+        }
     }
     @keyframes dash {
         to {

@@ -474,13 +474,20 @@ button {
 
 .time-section {
   color: var(--periwinkle);
-  margin: auto;
+  margin: 3rem auto 4.9375rem;
   width: 18.75rem;
   height: 18.75rem;
   border-radius: 50%;
+  text-align: center;
   background: linear-gradient(315deg, #2E325A 0%, #0E112A 100%);
   box-shadow: -50px -50px 100px #272C5A, 50px 50px 100px #121530;
-  text-align: center;
+}
+@media (min-width: 768px) {
+  .time-section {
+    width: 25.625rem;
+    height: 25.625rem;
+    margin-top: 6.8125rem;
+  }
 }
 .time-section__background {
   width: 16.7375rem;
@@ -488,22 +495,47 @@ button {
   background-color: var(--mirage);
   border-radius: 50%;
 }
+@media (min-width: 768px) {
+  .time-section__background {
+    width: 22.875rem;
+    height: 22.875rem;
+  }
+}
 
 .progress-bar {
   width: 15.503125rem;
   height: 15.503125rem;
+  fill: transparent;
   stroke: var(--theme-1);
+  stroke-width: 0.625rem;
+  stroke-linecap: round;
   transform: rotate(-90deg);
+}
+@media (min-width: 768px) {
+  .progress-bar {
+    width: 21.1875rem;
+    height: 21.1875rem;
+  }
 }
 .progress-bar__svg {
   width: 100%;
   height: 100%;
 }
-.progress-bar__circle {
-  stroke-dasharray: 742;
-  stroke-dashoffset: 742;
-  stroke-linecap: round;
-  animation: dash 1s linear forwards;
+.progress-bar__circle, .progress-bar__circle--medium {
+  animation: dash linear forwards;
+}
+@media (min-width: 768px) {
+  .progress-bar__circle, .progress-bar__circle--medium {
+    display: none;
+  }
+}
+.progress-bar__circle--medium {
+  display: none;
+}
+@media (min-width: 768px) {
+  .progress-bar__circle--medium {
+    display: initial;
+  }
 }
 @keyframes dash {
   to {

@@ -2,25 +2,29 @@
 
 .time-section {
     color: var(--periwinkle);
-    margin: auto;
+    margin: rem(48px) auto rem(79px);
     width:  rem(300px);
     height: rem(300px);
     border-radius: 50%;
-
+    text-align: center;
     background: linear-gradient(315deg, #2E325A 0%, #0E112A 100%);
     box-shadow: -50px -50px 100px #272C5A, 50px 50px 100px #121530;
-
-    text-align: center;
     @extend %flex-center;
-
-    
-
+    @include mq(medium) {
+        width:  rem(410px);
+        height: rem(410px);
+        margin-top: rem(109px);
+    }
     &__background {
         width:  rem(267.8px);
         height: rem(267.8px);
         background-color: var(--mirage);
         border-radius: 50%;
         @extend %flex-center;
+        @include mq(medium) {
+            width:  rem(366px);
+            height: rem(366px);
+        }
     }
 }
 
