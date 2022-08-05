@@ -5,13 +5,25 @@
     flex-direction: column;
     @extend %flex-center;
     &__time {
-        margin: 0;
-        padding: 0;
-        margin-top: 10px;
+        display: flex;
+        margin-top: rem(10px);
+        @include mq(medium) {
+            margin-top: rem(20px);
+        }
     }
     &__btn {
         margin: 0;
-        padding: rem(10px) 0 0;
+        padding: rem(5px) 0 0;
         cursor: pointer;
+        @include mq(medium) {
+            padding: rem(20px) 0 0;
+        }
+    }
+    &__align {
+        align-self: flex-end;
+    }
+    &__colon {
+        padding: 0 rem(5px);
     }
 }
+
