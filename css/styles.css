@@ -325,7 +325,7 @@ template {
   --theme: var(--heliotrope);
 }
 
-.timer, .progress-bar, .time-section, .time-section__background, .header, .cycle {
+.timer, .progress-bar, .time-section, .time-section__background, .cycle-section, .header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -433,20 +433,6 @@ button {
   }
 }
 
-.cycle {
-  margin: auto;
-  width: 20.4375rem;
-  height: 3.9375rem;
-  border-radius: 31.5px;
-  background-color: var(--mirage);
-}
-@media (min-width: 768px) {
-  .cycle {
-    width: 23.3125rem;
-    height: 3.9375rem;
-  }
-}
-
 .header {
   height: 6.25rem;
 }
@@ -458,6 +444,22 @@ button {
 @media (min-width: 1440px) {
   .header {
     height: 8.4375rem;
+  }
+}
+
+.cycle-section {
+  margin: auto;
+  width: 20.4375rem;
+  height: 3.9375rem;
+  border-radius: 31.5px;
+  background-color: var(--mirage);
+  position: relative;
+  z-index: 1;
+}
+@media (min-width: 768px) {
+  .cycle-section {
+    width: 23.3125rem;
+    height: 3.9375rem;
   }
 }
 
