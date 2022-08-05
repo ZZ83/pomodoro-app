@@ -478,11 +478,13 @@ button {
     width: 25.625rem;
     height: 25.625rem;
     margin-top: 6.8125rem;
+    margin-bottom: 9rem;
   }
 }
 @media (min-width: 1440px) {
   .time-section {
     margin-top: 3.0625rem;
+    margin-bottom: 3.9375rem;
   }
 }
 .time-section__background {

@@ -14,9 +14,11 @@
         width:  rem(410px);
         height: rem(410px);
         margin-top: rem(109px);
+        margin-bottom: rem(144px);
     }
     @include mq(large) {
         margin-top: rem(49px);
+        margin-bottom: rem(63px);
     }
     &__background {
         width:  rem(267.8px);
