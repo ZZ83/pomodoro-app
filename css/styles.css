@@ -602,22 +602,22 @@ button {
   opacity: 10;
 }
 
-.settings-section {
-  margin: 3.3125rem auto 0;
+.settings {
   width: 20.4375rem;
   height: 34.375rem;
+  margin: 3.3125rem auto 0;
   background-color: var(--white);
   border-radius: 0.9375rem;
 }
 @media (min-width: 768px) {
-  .settings-section {
+  .settings {
     width: 33.75rem;
     height: 29rem;
     margin-top: 16.6875rem;
   }
 }
 @media (min-width: 1440px) {
-  .settings-section {
+  .settings {
     margin-top: 9.6875rem;
   }
 }
@@ -625,13 +625,20 @@ button {
 .settings-header {
   height: 4.5rem;
   margin: 0 auto;
+  padding: 0 5%;
   display: flex;
   align-items: center;
-  border-bottom: 1px solid gray;
+  justify-content: space-between;
+  border-bottom: 2px solid #E3E1E1;
 }
-.settings-header svg {
-  margin-top: 0.25rem;
+.settings-header__close-btn {
   cursor: pointer;
+  margin-top: 0.25rem;
+}
+@media (min-width: 768px) {
+  .settings-header {
+    height: 5.8125rem;
+  }
 }
 
 .cycle-active {
