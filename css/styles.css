@@ -347,6 +347,7 @@ body {
 }
 
 h1,
+h2,
 h3 {
   margin: 0;
   padding: 0;
@@ -507,6 +508,26 @@ button {
   z-index: 5;
   top: 0;
   background: rgba(10, 12, 28, 0.5);
+}
+
+.settings-section {
+  margin: 3.3125rem auto 0;
+  width: 20.4375rem;
+  height: 34.375rem;
+  background-color: var(--white);
+  border-radius: 0.9375rem;
+}
+@media (min-width: 768px) {
+  .settings-section {
+    width: 33.75rem;
+    height: 29rem;
+    margin-top: 16.6875rem;
+  }
+}
+@media (min-width: 1440px) {
+  .settings-section {
+    margin-top: 9.6875rem;
+  }
 }
 
 .cycle-btn {

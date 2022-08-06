@@ -1,0 +1,17 @@
+@use '../abstracts' as *;
+
+.settings-section {
+    margin: rem(53px) auto 0;
+    width:  rem(327px);
+    height: rem(550px);
+    background-color: var(--white);
+    border-radius: rem(15px);
+    @include mq(medium) {
+        width:  rem(540px);
+        height: rem(464px);
+        margin-top: rem(267px);
+    }
+    @include mq(large) {
+        margin-top: rem(155px);
+    }
+}
