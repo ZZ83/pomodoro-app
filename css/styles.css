@@ -642,20 +642,36 @@ button {
 }
 
 .set-minutes {
-  background-color: red;
   width: 90%;
-  margin: auto;
+  margin: 0 auto;
   height: 13.4375rem;
 }
 
 .minute-btn {
   display: inline-flex;
   flex-direction: column;
-  background-color: #fff;
+  height: 100%;
+}
+.minute-btn__up {
+  background-color: purple;
+}
+.minute-btn__down {
+  background-color: orange;
 }
 
 .minutes {
   display: flex;
+}
+.minutes__header {
+  color: var(--port-gore);
+  opacity: 0.5;
+}
+
+input {
+  width: 7.6875rem;
+  height: 2.5rem;
+  border: none;
+  margin-left: auto;
 }
 
 .cycle-active {

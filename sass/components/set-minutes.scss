@@ -1,18 +1,39 @@
 @use '../abstracts' as *;
 
 .set-minutes {
-    background-color: red;
+    
     width: 90%;
-    margin: auto;
+    margin: 0 auto;
     height: rem(215px);
 }
 
 .minute-btn {
+    
     display: inline-flex;
     flex-direction: column;
-    background-color: #fff;
+    
+    height: 100%;
+    &__up {
+        background-color: purple;
+  
+    }
+    &__down {
+        background-color: orange;
+       
+    }
 }
 
 .minutes {
     display: flex;
+    &__header {
+        color: var(--port-gore);
+        opacity: 0.5;
+    }
+}
+
+input {
+    width: rem(123px);
+    height: rem(40px);
+    border: none;
+    margin-left: auto;
 }
