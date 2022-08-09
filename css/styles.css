@@ -641,6 +641,23 @@ button {
   }
 }
 
+.set-minutes {
+  background-color: red;
+  width: 90%;
+  margin: auto;
+  height: 13.4375rem;
+}
+
+.minute-btn {
+  display: inline-flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.minutes {
+  display: flex;
+}
+
 .cycle-active {
   color: var(--port-gore);
   opacity: initial;

@@ -1,0 +1,18 @@
+@use '../abstracts' as *;
+
+.set-minutes {
+    background-color: red;
+    width: 90%;
+    margin: auto;
+    height: rem(215px);
+}
+
+.minute-btn {
+    display: inline-flex;
+    flex-direction: column;
+    background-color: #fff;
+}
+
+.minutes {
+    display: flex;
+}
