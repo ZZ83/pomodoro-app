@@ -641,37 +641,16 @@ button {
   }
 }
 
-.set-minutes {
+.minutes {
   width: 90%;
   margin: 0 auto;
-  height: 13.4375rem;
+  height: 13.3125rem;
+  border-bottom: 2px solid #E3E1E1;
 }
-
-.minute-btn {
-  display: inline-flex;
-  flex-direction: column;
-  height: 100%;
-}
-.minute-btn__up {
-  background-color: purple;
-}
-.minute-btn__down {
-  background-color: orange;
-}
-
-.minutes {
-  display: flex;
-}
-.minutes__header {
-  color: var(--port-gore);
-  opacity: 0.5;
-}
-
-input {
-  width: 7.6875rem;
-  height: 2.5rem;
-  border: none;
-  margin-left: auto;
+@media (min-width: 768px) {
+  .minutes {
+    height: 9.8125rem;
+  }
 }
 
 .cycle-active {

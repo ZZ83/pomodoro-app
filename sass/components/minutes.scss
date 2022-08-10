@@ -1,0 +1,44 @@
+@use '../abstracts' as *;
+
+.minutes {
+    width: 90%;
+    margin: 0 auto;
+    height: rem(213px);
+    border-bottom: 2px solid #E3E1E1;
+    @include mq(medium) {
+        height: rem(157px);
+    }
+}
+
+// .minute-btn {
+    
+//     display: inline-flex;
+//     flex-direction: column;
+    
+//     height: 100%;
+//     &__up,
+//     &__down {
+//         background-color: purple;
+        
+  
+//     }
+    
+        
+      
+// }
+
+// .set-minutes {
+//     display: flex;
+//     &__header {
+//         color: var(--port-gore);
+//         opacity: 0.5;
+//     }
+// }
+
+// input {
+//     width: rem(123px);
+//     height: rem(40px);
+//     border: none;
+//     margin-left: auto;
+//     background-color: var(--white-lilac);
+// }
