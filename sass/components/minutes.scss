@@ -8,6 +8,9 @@
     @include mq(medium) {
         height: rem(157px);
     }
+    &__header {
+        margin-top: rem(24px);
+    }
 }
 
 // .minute-btn {

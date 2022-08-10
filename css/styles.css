@@ -398,11 +398,13 @@ h4 {
   line-height: 1rem;
   letter-spacing: 0.264375rem;
   text-transform: uppercase;
+  text-align: center;
 }
 @media (min-width: 768px) {
   h4 {
     font-size: 0.8125rem;
     letter-spacing: 0.3125rem;
+    text-align: left;
   }
 }
 
@@ -651,6 +653,9 @@ button {
   .minutes {
     height: 9.8125rem;
   }
+}
+.minutes__header {
+  margin-top: 1.5rem;
 }
 
 .cycle-active {
