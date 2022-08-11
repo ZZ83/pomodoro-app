@@ -325,7 +325,7 @@ template {
   --theme: var(--heliotrope);
 }
 
-.timer, .progress-bar, .time-section, .time-section__background, .cycle-section, .header {
+.minute-btn__up, .minute-btn__down, .timer, .progress-bar, .time-section, .time-section__background, .cycle-section, .header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -656,6 +656,59 @@ button {
 }
 .minutes__header {
   margin-top: 1.5rem;
+}
+
+.set-minutes {
+  display: flex;
+}
+.set-minutes__header {
+  color: var(--port-gore);
+  opacity: 0.5;
+}
+
+.minute-btn {
+  width: 8.75rem;
+  height: 2.5rem;
+  margin-left: auto;
+  padding: 0 0.625rem;
+  display: flex;
+  align-items: center;
+  background-color: var(--white-lilac);
+  border-radius: 10px;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .minute-btn {
+    height: 3rem;
+  }
+}
+.minute-btn__inner {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  right: 0.3125rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 0.3125rem 0;
+}
+.minute-btn__up, .minute-btn__down {
+  stroke: #1E213F;
+  stroke-opacity: 0.25;
+}
+.minute-btn__up:hover, .minute-btn__down:hover {
+  stroke-opacity: 1;
+}
+
+input {
+  width: 80%;
+  border: none;
+  background: none;
+}
+@media (min-width: 768px) {
+  input {
+    height: 3rem;
+  }
 }
 
 .cycle-active {
