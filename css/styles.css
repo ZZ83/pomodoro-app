@@ -642,18 +642,18 @@ button {
   margin-top: 0.25rem;
 }
 
-.minutes {
+.time-minutes {
   width: 90%;
   margin: 0 auto;
   height: 13.3125rem;
   border-bottom: 2px solid #E3E1E1;
 }
 @media (min-width: 768px) {
-  .minutes {
+  .time-minutes {
     height: 9.8125rem;
   }
 }
-.minutes__header {
+.time-minutes__header {
   margin-top: 1.5rem;
 }
 
