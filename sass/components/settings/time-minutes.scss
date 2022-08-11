@@ -9,29 +9,16 @@
         height: rem(157px);
     }
     &__header {
-        margin-top: rem(24px);
-        margin-bottom: rem(18px);
+        padding-top: rem(24px);
+        padding-bottom: rem(18px);
         @include mq(medium) {
-            margin-bottom: rem(26px);
+            padding-bottom: rem(23px);
         }
     }
     &__inner {
-        background-color: aqua;
         @include mq(medium) {
             display: flex;
             justify-content: space-between;
         }
-    }
-}
-
-.minute-btn {
-    display: flex;
-    @include mq(medium) {
-        flex-direction: column;
-    }
-
-    &__header {
-        color: var(--port-gore);
-        opacity: 0.5;
     }
 }

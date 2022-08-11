@@ -655,16 +655,13 @@ button {
   }
 }
 .time-minutes__header {
-  margin-top: 1.5rem;
-  margin-bottom: 1.125rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.125rem;
 }
 @media (min-width: 768px) {
   .time-minutes__header {
-    margin-bottom: 1.625rem;
+    padding-bottom: 1.4375rem;
   }
-}
-.time-minutes__inner {
-  background-color: aqua;
 }
 @media (min-width: 768px) {
   .time-minutes__inner {
@@ -673,24 +670,33 @@ button {
   }
 }
 
-.minute-btn {
+.set-minutes {
   display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
 }
 @media (min-width: 768px) {
-  .minute-btn {
+  .set-minutes {
+    align-items: flex-start;
     flex-direction: column;
+    margin-bottom: 0;
   }
 }
-.minute-btn__header {
+.set-minutes__header {
   color: var(--port-gore);
   opacity: 0.5;
 }
-
-.set-minutes {
+@media (min-width: 768px) {
+  .set-minutes__header {
+    margin-bottom: 0.625rem;
+    margin-left: 0.0625rem;
+  }
+}
+.set-minutes__inner {
   width: 8.75rem;
   height: 2.5rem;
   margin-left: auto;
-  padding: 0 0.625rem;
+  padding-left: 0.9375rem;
   display: flex;
   align-items: center;
   background-color: var(--white-lilac);
@@ -698,7 +704,7 @@ button {
   position: relative;
 }
 @media (min-width: 768px) {
-  .set-minutes {
+  .set-minutes__inner {
     height: 3rem;
   }
 }
@@ -712,11 +718,11 @@ button {
     height: 3rem;
   }
 }
-.set-minutes__inner {
+.set-minutes__inner-deep {
   height: 100%;
   position: absolute;
   top: 0;
-  right: 0.3125rem;
+  right: 0.4375rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;

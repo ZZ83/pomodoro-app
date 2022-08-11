@@ -1,17 +1,35 @@
 @use '../../abstracts' as *;
 
 .set-minutes {
-    width: rem(140px);
-    height: rem(40px);
-    margin-left: auto;
-    padding: 0 rem(10px);
     display: flex;
     align-items: center;
-    background-color: var(--white-lilac);
-    border-radius: 10px;
-    position: relative;
+    margin-bottom: rem(8px);
     @include mq(medium) {
-        height: rem(48px);
+        align-items: flex-start;
+        flex-direction: column;
+        margin-bottom: 0;
+    }
+    &__header {
+        color: var(--port-gore);
+        opacity: 0.5;
+        @include mq(medium) {
+            margin-bottom: rem(10px);
+            margin-left: rem(1px);
+        }
+    }
+    &__inner {
+        width: rem(140px);
+        height: rem(40px);
+        margin-left: auto;
+        padding-left: rem(15px);
+        display: flex;
+        align-items: center;
+        background-color: var(--white-lilac);
+        border-radius: 10px;
+        position: relative;
+        @include mq(medium) {
+            height: rem(48px);
+        }
     }
     &__input {
         width: 80%;
@@ -21,11 +39,11 @@
             height: rem(48px);
         }
     }
-    &__inner {
+    &__inner-deep {
         height: 100%;
         position: absolute;
         top: 0;
-        right: rem(5px);
+        right: rem(7px);
         display: flex;
         flex-direction: column;
         justify-content: space-around;
