@@ -623,8 +623,7 @@ button {
     margin-top: 9.6875rem;
   }
 }
-
-.settings-header {
+.settings__header {
   height: 4.5rem;
   margin: 0 auto;
   padding: 0 5%;
@@ -633,14 +632,14 @@ button {
   justify-content: space-between;
   border-bottom: 2px solid #E3E1E1;
 }
-.settings-header__close-btn {
-  cursor: pointer;
-  margin-top: 0.25rem;
-}
 @media (min-width: 768px) {
-  .settings-header {
+  .settings__header {
     height: 5.8125rem;
   }
+}
+.settings__close-btn {
+  cursor: pointer;
+  margin-top: 0.25rem;
 }
 
 .minutes {
