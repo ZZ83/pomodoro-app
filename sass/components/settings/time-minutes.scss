@@ -10,57 +10,28 @@
     }
     &__header {
         margin-top: rem(24px);
+        margin-bottom: rem(18px);
+        @include mq(medium) {
+            margin-bottom: rem(26px);
+        }
     }
-}
-
-.set-minutes {
-    display: flex;
-    &__header {
-        color: var(--port-gore);
-        opacity: 0.5;
+    &__inner {
+        background-color: aqua;
+        @include mq(medium) {
+            display: flex;
+            justify-content: space-between;
+        }
     }
 }
 
 .minute-btn {
-    width: rem(140px);
-    height: rem(40px);
-    margin-left: auto;
-    padding: 0 rem(10px);
     display: flex;
-    align-items: center;
-    background-color: var(--white-lilac);
-    border-radius: 10px;
-    position: relative;
     @include mq(medium) {
-        height: rem(48px);
-    }
-    &__inner {
-        height: 100%;
-        position: absolute;
-        top: 0;
-        right: rem(5px);
-        display: flex;
         flex-direction: column;
-        justify-content: space-around;
-        padding: rem(5px) 0;
     }
-    &__up,
-    &__down {
-        stroke: #1E213F;
-        stroke-opacity: .25;
-        @extend %flex-center;
-        &:hover {
-            stroke-opacity: 1;
-        }
-    }
-   
-}
 
-input {
-    width: 80%;
-    border: none;
-    background: none;
-    @include mq(medium) {
-        height: rem(48px);
+    &__header {
+        color: var(--port-gore);
+        opacity: 0.5;
     }
 }

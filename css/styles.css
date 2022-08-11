@@ -325,7 +325,7 @@ template {
   --theme: var(--heliotrope);
 }
 
-.minute-btn__up, .minute-btn__down, .timer, .progress-bar, .time-section, .time-section__background, .cycle-section, .header {
+.set-minutes__up, .set-minutes__down, .timer, .progress-bar, .time-section, .time-section__background, .cycle-section, .header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -349,7 +349,8 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   margin: 0;
   padding: 0;
 }
@@ -655,17 +656,37 @@ button {
 }
 .time-minutes__header {
   margin-top: 1.5rem;
+  margin-bottom: 1.125rem;
+}
+@media (min-width: 768px) {
+  .time-minutes__header {
+    margin-bottom: 1.625rem;
+  }
+}
+.time-minutes__inner {
+  background-color: aqua;
+}
+@media (min-width: 768px) {
+  .time-minutes__inner {
+    display: flex;
+    justify-content: space-between;
+  }
 }
 
-.set-minutes {
+.minute-btn {
   display: flex;
 }
-.set-minutes__header {
+@media (min-width: 768px) {
+  .minute-btn {
+    flex-direction: column;
+  }
+}
+.minute-btn__header {
   color: var(--port-gore);
   opacity: 0.5;
 }
 
-.minute-btn {
+.set-minutes {
   width: 8.75rem;
   height: 2.5rem;
   margin-left: auto;
@@ -677,11 +698,21 @@ button {
   position: relative;
 }
 @media (min-width: 768px) {
-  .minute-btn {
+  .set-minutes {
     height: 3rem;
   }
 }
-.minute-btn__inner {
+.set-minutes__input {
+  width: 80%;
+  border: none;
+  background: none;
+}
+@media (min-width: 768px) {
+  .set-minutes__input {
+    height: 3rem;
+  }
+}
+.set-minutes__inner {
   height: 100%;
   position: absolute;
   top: 0;
@@ -691,23 +722,12 @@ button {
   justify-content: space-around;
   padding: 0.3125rem 0;
 }
-.minute-btn__up, .minute-btn__down {
+.set-minutes__up, .set-minutes__down {
   stroke: #1E213F;
   stroke-opacity: 0.25;
 }
-.minute-btn__up:hover, .minute-btn__down:hover {
+.set-minutes__up:hover, .set-minutes__down:hover {
   stroke-opacity: 1;
-}
-
-input {
-  width: 80%;
-  border: none;
-  background: none;
-}
-@media (min-width: 768px) {
-  input {
-    height: 3rem;
-  }
 }
 
 .cycle-active {
