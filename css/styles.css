@@ -790,6 +790,17 @@ button {
   color: var(--white);
   background-color: var(--mirage);
 }
+.btn--kumbh {
+  font-family: var(--font-family-primary);
+}
+.btn--roboto {
+  font-weight: var(--font-weight--regular);
+  font-family: var(--font-family-secondary);
+}
+.btn--space {
+  font-weight: var(--font-weight--bold);
+  font-family: var(--font-family-tertiary);
+}
 .btn--color-froly {
   background-color: var(--froly);
 }

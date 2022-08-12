@@ -27,6 +27,17 @@
         color: var(--white);
         background-color: var(--mirage);
     }
+    &--kumbh {
+        font-family: var(--font-family-primary);
+    }
+    &--roboto {
+        font-weight: var(--font-weight--regular);
+        font-family: var(--font-family-secondary);
+    }
+    &--space {
+        font-weight: var(--font-weight--bold );
+        font-family: var(--font-family-tertiary);
+    }   
     &--color-froly {
         background-color: var(--froly);
     }
