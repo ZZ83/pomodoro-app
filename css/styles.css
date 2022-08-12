@@ -718,7 +718,7 @@ button {
   height: 100%;
   position: absolute;
   top: 0;
-  right: 0.4375rem;
+  right: 0.75rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -786,10 +786,6 @@ button {
   color: var(--port-gore);
   background-color: var(--white-lilac);
 }
-.btn--active {
-  color: var(--white);
-  background-color: var(--mirage);
-}
 .btn--kumbh {
   font-family: var(--font-family-primary);
 }
@@ -800,6 +796,10 @@ button {
 .btn--space {
   font-weight: var(--font-weight--bold);
   font-family: var(--font-family-tertiary);
+}
+.btn--active {
+  color: var(--white);
+  background-color: var(--mirage);
 }
 .btn--color-froly {
   background-color: var(--froly);

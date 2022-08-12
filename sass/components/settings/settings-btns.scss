@@ -23,10 +23,6 @@
         color: var(--port-gore);
         background-color: var(--white-lilac);
     }
-    &--active {
-        color: var(--white);
-        background-color: var(--mirage);
-    }
     &--kumbh {
         font-family: var(--font-family-primary);
     }
@@ -37,7 +33,11 @@
     &--space {
         font-weight: var(--font-weight--bold );
         font-family: var(--font-family-tertiary);
-    }   
+    } 
+    &--active {
+        color: var(--white);
+        background-color: var(--mirage);
+    }  
     &--color-froly {
         background-color: var(--froly);
     }
