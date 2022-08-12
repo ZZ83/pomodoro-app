@@ -2,11 +2,11 @@
 
 .font-and-color {
     width: 90%;
-    margin: 0 auto;
     height: rem(117px);
     display: flex;
     align-items: center;
     flex-direction: column;
+    @extend %center-block;
     @include mq(medium) {
         height: rem(89px);
         flex-direction: row;

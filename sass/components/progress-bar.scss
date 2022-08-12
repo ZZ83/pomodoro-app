@@ -6,7 +6,7 @@
     fill: transparent;
     stroke: var(--theme);
     stroke-width: rem(10px);
-    // stroke-linecap: round;
+    stroke-linecap: round;
     transform: rotate(-90deg);
     @extend %flex-center;
     @include mq(medium) {

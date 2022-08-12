@@ -2,9 +2,9 @@
 
 .settings-btn {
     display: block;
-    margin: 0 auto;
     fill: var(--periwinkle);
     opacity: 0.5;
+    @extend %center-block;
     &:hover {
         opacity: 10;
     }

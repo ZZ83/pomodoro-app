@@ -1,7 +1,6 @@
 @use '../abstracts' as *;
 
 .cycle-section {
-    margin: auto;
     width: rem(327px);
     height: rem(63px);
     border-radius: 31.5px;
@@ -9,6 +8,7 @@
     position: relative;
     z-index: 1;
     @extend %flex-center;
+    @extend %center-block;
     @include mq(medium) {
         width: rem(373px); 
         height: rem(63px);

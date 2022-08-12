@@ -2,9 +2,9 @@
 
 .minutes {
     width: 90%;
-    margin: 0 auto;
     height: rem(213px);
     border-bottom: 2px solid #E3E1E1;
+    @extend %center-block;
     @include mq(medium) {
         height: rem(157px);
     }

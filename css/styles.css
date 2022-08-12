@@ -331,6 +331,10 @@ template {
   justify-content: center;
 }
 
+.font-and-color, .minutes, .settings-btn, .cycle-section {
+  margin: 0 auto;
+}
+
 *,
 *:after,
 *:before {
@@ -442,7 +446,6 @@ button {
 }
 
 .cycle-section {
-  margin: auto;
   width: 20.4375rem;
   height: 3.9375rem;
   border-radius: 31.5px;
@@ -534,6 +537,7 @@ button {
   fill: transparent;
   stroke: var(--theme);
   stroke-width: 0.625rem;
+  stroke-linecap: round;
   transform: rotate(-90deg);
 }
 @media (min-width: 768px) {
@@ -593,7 +597,6 @@ button {
 
 .settings-btn {
   display: block;
-  margin: 0 auto;
   fill: var(--periwinkle);
   opacity: 0.5;
 }
@@ -641,7 +644,6 @@ button {
 
 .minutes {
   width: 90%;
-  margin: 0 auto;
   height: 13.3125rem;
   border-bottom: 2px solid #E3E1E1;
 }
@@ -734,7 +736,6 @@ button {
 
 .font-and-color {
   width: 90%;
-  margin: 0 auto;
   height: 7.3125rem;
   display: flex;
   align-items: center;
