@@ -643,28 +643,28 @@ button {
   margin-top: 0.25rem;
 }
 
-.time-minutes {
+.minutes {
   width: 90%;
   margin: 0 auto;
   height: 13.3125rem;
   border-bottom: 2px solid #E3E1E1;
 }
 @media (min-width: 768px) {
-  .time-minutes {
+  .minutes {
     height: 9.8125rem;
   }
 }
-.time-minutes__header {
+.minutes__header {
   padding-top: 1.5rem;
   padding-bottom: 1.125rem;
 }
 @media (min-width: 768px) {
-  .time-minutes__header {
+  .minutes__header {
     padding-bottom: 1.4375rem;
   }
 }
 @media (min-width: 768px) {
-  .time-minutes__inner {
+  .minutes__inner {
     display: flex;
     justify-content: space-between;
   }
