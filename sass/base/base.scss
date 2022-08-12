@@ -85,10 +85,3 @@ button {
     border:     none;
     background: none;
 }
-
-.cycle-btn {
-    font-size: rem(12px);
-    @include mq(medium) {
-        font-size: rem(14px);
-    }
-}

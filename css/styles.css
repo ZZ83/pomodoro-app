@@ -425,15 +425,6 @@ button {
   background: none;
 }
 
-.cycle-btn {
-  font-size: 0.75rem;
-}
-@media (min-width: 768px) {
-  .cycle-btn {
-    font-size: 0.875rem;
-  }
-}
-
 .header {
   height: 6.25rem;
 }
@@ -513,6 +504,7 @@ button {
 .cycle-btn {
   width: 6.5625rem;
   height: 3rem;
+  font-size: 0.75rem;
   border-radius: 26.5px;
   color: var(--periwinkle);
   opacity: 0.4;
@@ -521,6 +513,7 @@ button {
   .cycle-btn {
     width: 7.5rem;
     height: 3rem;
+    font-size: 0.875rem;
   }
 }
 .cycle-btn--active {
@@ -741,11 +734,9 @@ button {
   width: 90%;
   margin: 0 auto;
   height: 7.3125rem;
-  margin-bottom: 10px;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  border-bottom: 2px solid #e3e1e1;
+  flex-direction: column;
 }
 @media (min-width: 768px) {
   .font-and-color {
@@ -754,8 +745,11 @@ button {
     justify-content: space-between;
   }
 }
+.font-and-color--border {
+  border-bottom: 2px solid #e3e1e1;
+}
 .font-and-color__header {
-  padding: 1.375rem 0 1.25rem 0;
+  padding: 1.25rem 0;
 }
 @media (min-width: 768px) {
   .font-and-color__header {
