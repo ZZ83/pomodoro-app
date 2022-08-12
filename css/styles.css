@@ -325,7 +325,7 @@ template {
   --theme: var(--heliotrope);
 }
 
-.set-minutes__up, .set-minutes__down, .timer, .progress-bar, .time-section, .time-section__background, .cycle-section, .header {
+.btn-wrapper, .btn, .set-minutes__up, .set-minutes__down, .timer, .progress-bar, .time-section, .time-section__background, .cycle-section, .header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -420,6 +420,8 @@ input {
 }
 
 button {
+  margin: 0;
+  padding: 0;
   cursor: pointer;
   border: none;
   background: none;
@@ -749,7 +751,7 @@ button {
   border-bottom: 2px solid #e3e1e1;
 }
 .font-and-color__header {
-  padding: 1.25rem 0;
+  padding: 1.25rem 0 0.75rem;
 }
 @media (min-width: 768px) {
   .font-and-color__header {
@@ -762,24 +764,39 @@ button {
   justify-content: space-between;
 }
 
+.btn-wrapper {
+  width: 3rem;
+  height: 3rem;
+}
+.btn-wrapper:hover {
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #EFF1FA;
+}
+
 .btn {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  background-color: aqua;
+  margin: 0;
+  padding: 0;
 }
 .btn--font {
   font-size: 0.9375rem;
   color: var(--port-gore);
   background-color: var(--white-lilac);
 }
-.btn--color--1 {
+.btn--active {
+  color: var(--white);
+  background-color: var(--mirage);
+}
+.btn--color-froly {
   background-color: var(--froly);
 }
-.btn--color--2 {
+.btn--color-malibu {
   background-color: var(--malibu);
 }
-.btn--color--3 {
+.btn--color-heliotrope {
   background-color: var(--heliotrope);
 }
 
