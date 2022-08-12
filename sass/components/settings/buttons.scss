@@ -50,11 +50,14 @@
 }
 
 .apply-btn {
-   width: rem(140px);
-   height: rem(53px); 
-   display: block;
-   margin: rem(5px) auto 0;
-   border-radius: 26.5px;
-   color: var(--white);
-   background-color: var(--froly);
+    width: rem(140px);
+    height: rem(53px); 
+    display: block;
+    margin: rem(5px) auto 0;
+    border-radius: 26.5px;
+    color: var(--white);
+    background-color: var(--froly);
+    &:hover {
+       background-color: #F98D8D;
+    }
 }

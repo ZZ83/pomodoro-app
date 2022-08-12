@@ -820,5 +820,8 @@ button {
   color: var(--white);
   background-color: var(--froly);
 }
+.apply-btn:hover {
+  background-color: #F98D8D;
+}
 
 /*# sourceMappingURL=styles.css.map */
