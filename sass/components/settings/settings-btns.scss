@@ -1,0 +1,39 @@
+@use '../../abstracts' as *;
+
+.btn-wrapper {
+    width: rem(48px);
+    height: rem(48px);
+    @extend %flex-center;
+    &:hover {
+        cursor: pointer;
+        border-radius: 50%;
+        border: 2px solid #EFF1FA;
+    }
+}
+
+.btn {
+    width: rem(40px);
+    height: rem(40px);
+    border-radius: 50%;
+    margin: 0;
+    padding: 0;
+    @extend %flex-center;
+    &--font {
+        font-size: rem(15px);
+        color: var(--port-gore);
+        background-color: var(--white-lilac);
+    }
+    &--active {
+        color: var(--white);
+        background-color: var(--mirage);
+    }
+    &--color-froly {
+        background-color: var(--froly);
+    }
+    &--color-malibu {
+        background-color: var(--malibu);
+    }
+    &--color-heliotrope {
+        background-color: var(--heliotrope);
+    }   
+}
