@@ -6,18 +6,18 @@
     @extend %flex-center;
     &:hover {
         cursor: pointer;
-        border-radius: 50%;
         border: 2px solid #EFF1FA;
+        @extend %border-radius50;
     }
 }
 
 .btn {
     width: rem(40px);
     height: rem(40px);
-    border-radius: 50%;
     margin: 0;
     padding: 0;
     @extend %flex-center;
+    @extend %border-radius50;
     &--font {
         font-size: rem(15px);
         color: var(--port-gore);
