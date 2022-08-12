@@ -10,6 +10,11 @@
         width: rem(120px); 
         height: rem(48px);
     }
+    &--active {
+        color: var(--port-gore);
+        opacity: initial;
+        background-color: var(--theme);
+    }
     &:hover {
         color: var(--periwinkle);
         opacity: initial;

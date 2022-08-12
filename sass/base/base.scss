@@ -86,10 +86,6 @@ button {
     background: none;
 }
 
-.font-btn {
-    font-size: rem(15px);
-}
-
 .cycle-btn {
     font-size: rem(12px);
     @include mq(medium) {
