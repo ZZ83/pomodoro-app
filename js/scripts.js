@@ -99,6 +99,8 @@ overlayCloseButton.addEventListener("click", () => {
 
 const applyButton = document.querySelector(".apply-btn");
 
+
+let font = "";
 let color = "";
 
 const body    = document.querySelector("body");
@@ -107,6 +109,19 @@ const buttons = document.querySelectorAll(".btn-wrapper");
 buttons.forEach(element => {
     element.addEventListener("click", (event) => {
 
+        // Set font variable
+        if( element.firstElementChild.classList.contains("btn--kumbh") ) {
+            font = "var(--font-family-kumbh-sans)";
+        }
+        if( element.firstElementChild.classList.contains("btn--roboto") ) {
+            font = " var(--font-family-roboto-slab)";
+        }
+        if( element.firstElementChild.classList.contains("btn--space") ) {
+            font = "var(--font-family-space-mono)";
+        }
+
+
+        // Set color variable
         if( element.firstElementChild.classList.contains("btn--color-froly") ) {
             color = "var(--froly)";
         }
@@ -116,11 +131,12 @@ buttons.forEach(element => {
         if( element.firstElementChild.classList.contains("btn--color-heliotrope") ) {
             color = "var(--heliotrope)";
         }
-        console.log(element.firstElementChild);
+        
     })
 })
 
 applyButton.addEventListener("click", () => {
     body.style.setProperty('--theme', color);
+    body.style.setProperty('--font-family-primary', font);
     hideOverlay();
 })

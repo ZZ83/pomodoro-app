@@ -308,9 +308,10 @@ template {
 }
 
 :root {
-  --font-family-primary: "Kumbh Sans", sans-serif;
-  --font-family-secondary: "Roboto Slab", serif;
-  --font-family-tertiary: "Space Mono", monospace;
+  --font-family-kumbh-sans: "Kumbh Sans", sans-serif;
+  --font-family-roboto-slab: "Roboto Slab", serif;
+  --font-family-space-mono: "Space Mono", monospace;
+  --font-family-primary: var(--font-family-kumbh-sans);
   --font-weight--regular: 400;
   --font-weight--bold: 700;
   --font-spacing: -4px;
@@ -350,7 +351,6 @@ html {
 }
 
 body {
-  font-weight: var(--font-weight--bold);
   font-family: var(--font-family-primary);
 }
 
@@ -425,6 +425,7 @@ h5 {
 input {
   font-size: 0.875rem;
   line-height: 1.125rem;
+  font-weight: var(--font-weight--bold);
 }
 
 button {
@@ -433,6 +434,7 @@ button {
   cursor: pointer;
   border: none;
   background: none;
+  font-weight: var(--font-weight--bold);
 }
 
 .header {

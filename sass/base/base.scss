@@ -11,7 +11,6 @@ html {
 }
 
 body { 
-    font-weight: var(--font-weight--bold);
     font-family: var(--font-family-primary);
 }
 
@@ -78,6 +77,7 @@ h5 {
 input {
     font-size:   rem(14px);
     line-height: rem(18px);
+    font-weight: var(--font-weight--bold);
 }
 
 button {
@@ -86,4 +86,5 @@ button {
     cursor: pointer;
     border:     none;
     background: none;
+    font-weight: var(--font-weight--bold);
 }
