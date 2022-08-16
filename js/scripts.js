@@ -1,7 +1,6 @@
 import {showOverlay, hideOverlay} from './overlay.js'
 
-
-//FUNCTIONS ------------------------------------------------------------------------
+// //FUNCTIONS ------------------------------------------------------------------------
 function addClassTo(element, klass) {
     element.classList.add(klass);
 }
@@ -60,3 +59,68 @@ overlayCloseButton.addEventListener("click", () => {
    closeOverlayIfVisible();
 })
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+const applyButton = document.querySelector(".apply-btn");
+
+let color = "";
+
+const body    = document.querySelector("body");
+const buttons = document.querySelectorAll(".btn-wrapper");
+
+buttons.forEach(element => {
+    element.addEventListener("click", (event) => {
+
+        if( element.firstElementChild.classList.contains("btn--color-froly") ) {
+            color = "var(--froly)";
+        }
+        if( element.firstElementChild.classList.contains("btn--color-malibu") ) {
+            color = "var(--malibu)";
+        }
+        if( element.firstElementChild.classList.contains("btn--color-heliotrope") ) {
+            color = "var(--heliotrope)";
+        }
+        console.log(element.firstElementChild);
+    })
+})
+
+applyButton.addEventListener("click", () => {
+    body.style.setProperty('--theme', color);
+    hideOverlay();
+})
