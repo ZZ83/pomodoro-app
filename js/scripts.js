@@ -15,6 +15,12 @@ function removeClassFromList(list, klass) {
     })
 };
 
+function removeClassFromListC(list, klass) {
+    list.forEach(item => {
+        removeClassFrom(item.firstElementChild, klass)
+    })
+};
+
 const cycleButtons = document.querySelectorAll(".cycle-btn");
 const cycleSection = document.querySelector(".cycle-section");
 cycleSection.addEventListener("click", (event) => {
@@ -99,44 +105,153 @@ overlayCloseButton.addEventListener("click", () => {
 
 const applyButton = document.querySelector(".apply-btn");
 
-
-let font = "";
+/**************************************************************
+    This block of code allows you to set 
+    the font family and color theme of the web app.
+***************************************************************/
+let font  = "";
 let color = "";
-
 const body    = document.querySelector("body");
-const buttons = document.querySelectorAll(".btn-wrapper");
 
-buttons.forEach(element => {
-    element.addEventListener("click", (event) => {
+const buttons = [...document.querySelectorAll(".btn-wrapper")];  
+const fontButtons  = buttons.splice(0, 3);
+const colorButtons = buttons.splice(-3);
 
-        // Set font variable
+fontButtons.forEach(element => {
+    element.addEventListener("click", () => {
         if( element.firstElementChild.classList.contains("btn--kumbh") ) {
             font = "var(--font-family-kumbh-sans)";
+            removeClassFromListC(fontButtons, "btn--active")
+            addClassTo(element.firstElementChild, "btn--active")
         }
         if( element.firstElementChild.classList.contains("btn--roboto") ) {
             font = " var(--font-family-roboto-slab)";
+            removeClassFromListC(fontButtons, "btn--active")
+            addClassTo(element.firstElementChild, "btn--active")
         }
         if( element.firstElementChild.classList.contains("btn--space") ) {
             font = "var(--font-family-space-mono)";
+            removeClassFromListC(fontButtons, "btn--active")
+            addClassTo(element.firstElementChild, "btn--active")
         }
+    })
+})
 
-
-        // Set color variable
+colorButtons.forEach(element => {
+    element.addEventListener("click", () => {
         if( element.firstElementChild.classList.contains("btn--color-froly") ) {
             color = "var(--froly)";
+            colorButtons.forEach(element => {
+               element.firstElementChild.innerHTML = "";
+            })
+            element.firstElementChild.innerHTML = "&check;";
         }
         if( element.firstElementChild.classList.contains("btn--color-malibu") ) {
             color = "var(--malibu)";
+            colorButtons.forEach(element => {
+                element.firstElementChild.innerHTML = "";
+             })
+             element.firstElementChild.innerHTML = "&check;";
         }
         if( element.firstElementChild.classList.contains("btn--color-heliotrope") ) {
             color = "var(--heliotrope)";
+            colorButtons.forEach(element => {
+                element.firstElementChild.innerHTML = "";
+             })
+             element.firstElementChild.innerHTML = "&check;";
         }
-        
     })
 })
+/**************************************************************
+    This block of code allows you to set 
+    the font family and color theme of the web app.
+***************************************************************/
+
+
+let pomodoro   = 25;
+let shortBreak = 5;
+let longBreak  = 15;
+
+const upButtons     = document.querySelectorAll(".set-minutes__up");
+const downButtons   = document.querySelectorAll(".set-minutes__down");
+const minutesInputs = document.querySelectorAll(".set-minutes__input");
+
+upButtons.forEach( (element, index) => {
+    element.addEventListener("click", () => {
+
+        if(index === 0) {
+            pomodoro ++;
+            console.log("pomodoro:", pomodoro)
+            minutesInputs[0].value = pomodoro;
+        }
+        if(index === 1) {
+            shortBreak ++;
+            console.log("Short Break:", shortBreak)
+            minutesInputs[1].value = shortBreak;
+        }
+        if(index === 2) {
+            longBreak ++;
+            console.log("Long Break:", longBreak)
+            minutesInputs[2].value = longBreak;
+        }
+       
+    })
+})
+
+downButtons.forEach( (element, index) => {
+    element.addEventListener("click", () => {
+        if(index === 0) {
+            pomodoro --;
+            console.log("pomodoro:", pomodoro)
+            minutesInputs[0].value = pomodoro;
+        }
+        if(index === 1) {
+            shortBreak --;
+            console.log("Short Break:", shortBreak)
+            minutesInputs[1].value = shortBreak;
+        }
+        if(index === 2) {
+            longBreak --;
+            console.log("Long Break:", longBreak)
+            minutesInputs[2].value = longBreak;
+        }
+    })
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 applyButton.addEventListener("click", () => {
     body.style.setProperty('--theme', color);
     body.style.setProperty('--font-family-primary', font);
     hideOverlay();
+
+
+
+    // Take pomodoro value and convert it into a minute display
+
+
+
+
+
 })
+
+let minute = 60;
+
+
+
+// setInterval(function() {
+//     minute --;
+//     console.log(minute);
+// }, 1000);
