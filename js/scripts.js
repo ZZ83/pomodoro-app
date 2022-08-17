@@ -126,7 +126,7 @@ fontButtons.forEach(element => {
             removeClassFromListC(fontButtons, "btn--active")
             addClassTo(element.firstElementChild, "btn--active")
 
-            colon.style.marginTop = 0;
+            colon.style.margin = "0 5px";
             body.style.setProperty('--font-spacing', "-3px");
         }
         if( element.firstElementChild.classList.contains("btn--roboto") ) {
@@ -134,13 +134,16 @@ fontButtons.forEach(element => {
             removeClassFromListC(fontButtons, "btn--active")
             addClassTo(element.firstElementChild, "btn--active")
 
-            colon.style.marginTop = "4px";
+            colon.style.margin = "4px 0 0";
             body.style.setProperty('--font-spacing', 0);
         }
         if( element.firstElementChild.classList.contains("btn--space") ) {
             font = "var(--font-family-space-mono)";
             removeClassFromListC(fontButtons, "btn--active")
             addClassTo(element.firstElementChild, "btn--active")
+
+            colon.style.margin= "4px -12px 0";
+            body.style.setProperty('--font-spacing', 0);
         }
     })
 })
@@ -254,32 +257,32 @@ applyButton.addEventListener("click", () => {
 
 
 
-let seconds = 59;
-let minutes = 90;
+// let seconds = 59;
+// let minutes = 90;
 
-const min         = document.querySelector(".time__min");
-const sec         = document.querySelector(".time__sec");
-const timerButton = document.querySelector(".timer__btn");
+// const min         = document.querySelector(".time__min");
+// const sec         = document.querySelector(".time__sec");
+// const timerButton = document.querySelector(".timer__btn");
 
-const myInterval = setInterval(function() { 
-    if (seconds < 10) {
-        seconds = "0" + seconds;
-    }
-    if (minutes < 10) {
-        minutes = "0" + minutes;
-    }
-    min.innerHTML = minutes.toString();
-    sec.innerHTML = seconds.toString();
-    minutes = parseFloat(minutes);
-    if (seconds === "00" && minutes == "00" ) {
-        timerButton.firstElementChild.innerHTML = "RESTART";
+// const myInterval = setInterval(function() { 
+//     if (seconds < 10) {
+//         seconds = "0" + seconds;
+//     }
+//     if (minutes < 10) {
+//         minutes = "0" + minutes;
+//     }
+//     min.innerHTML = minutes.toString();
+//     sec.innerHTML = seconds.toString();
+//     minutes = parseFloat(minutes);
+//     if (seconds === "00" && minutes == "00" ) {
+//         timerButton.firstElementChild.innerHTML = "RESTART";
        
-        clearInterval(myInterval);
+//         clearInterval(myInterval);
         
-    }
-    if (seconds === "00") {
-        seconds = 59;
-        minutes --;
-    }
-    seconds --;
-}, 1000);
+//     }
+//     if (seconds === "00") {
+//         seconds = 59;
+//         minutes --;
+//     }
+//     seconds --;
+// }, 1000);
