@@ -314,7 +314,7 @@ template {
   --font-family-primary: var(--font-family-kumbh-sans);
   --font-weight--regular: 400;
   --font-weight--bold: 700;
-  --font-spacing: -4px;
+  --font-spacing: -2px;
   --white: #FFFFFF;
   --mirage: #161932;
   --port-gore: #1E213F;
@@ -596,7 +596,7 @@ button {
   align-self: flex-end;
 }
 .timer__colon {
-  padding: 0 0.3125rem;
+  margin: 0 0.3125rem;
 }
 
 .settings-btn {

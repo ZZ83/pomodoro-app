@@ -117,17 +117,25 @@ const buttons = [...document.querySelectorAll(".btn-wrapper")];
 const fontButtons  = buttons.splice(0, 3);
 const colorButtons = buttons.splice(-3);
 
+const colon = document.querySelector(".timer__colon");
+
 fontButtons.forEach(element => {
     element.addEventListener("click", () => {
         if( element.firstElementChild.classList.contains("btn--kumbh") ) {
             font = "var(--font-family-kumbh-sans)";
             removeClassFromListC(fontButtons, "btn--active")
             addClassTo(element.firstElementChild, "btn--active")
+
+            colon.style.marginTop = 0;
+            body.style.setProperty('--font-spacing', "-3px");
         }
         if( element.firstElementChild.classList.contains("btn--roboto") ) {
             font = " var(--font-family-roboto-slab)";
             removeClassFromListC(fontButtons, "btn--active")
             addClassTo(element.firstElementChild, "btn--active")
+
+            colon.style.marginTop = "4px";
+            body.style.setProperty('--font-spacing', 0);
         }
         if( element.firstElementChild.classList.contains("btn--space") ) {
             font = "var(--font-family-space-mono)";
@@ -236,9 +244,6 @@ applyButton.addEventListener("click", () => {
     body.style.setProperty('--theme', color);
     body.style.setProperty('--font-family-primary', font);
     hideOverlay();
-
-
-
     // Take pomodoro value and convert it into a minute display
 
 
@@ -247,11 +252,34 @@ applyButton.addEventListener("click", () => {
 
 })
 
-let minute = 60;
 
 
+let seconds = 59;
+let minutes = 90;
 
-// setInterval(function() {
-//     minute --;
-//     console.log(minute);
-// }, 1000);
+const min         = document.querySelector(".time__min");
+const sec         = document.querySelector(".time__sec");
+const timerButton = document.querySelector(".timer__btn");
+
+const myInterval = setInterval(function() { 
+    if (seconds < 10) {
+        seconds = "0" + seconds;
+    }
+    if (minutes < 10) {
+        minutes = "0" + minutes;
+    }
+    min.innerHTML = minutes.toString();
+    sec.innerHTML = seconds.toString();
+    minutes = parseFloat(minutes);
+    if (seconds === "00" && minutes == "00" ) {
+        timerButton.firstElementChild.innerHTML = "RESTART";
+       
+        clearInterval(myInterval);
+        
+    }
+    if (seconds === "00") {
+        seconds = 59;
+        minutes --;
+    }
+    seconds --;
+}, 1000);
