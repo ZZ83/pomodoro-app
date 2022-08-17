@@ -785,20 +785,20 @@ button {
   padding: 0;
 }
 .btn--font {
+  color: #575972;
   font-size: 0.9375rem;
-  color: var(--port-gore);
   background-color: var(--white-lilac);
 }
 .btn--kumbh {
-  font-family: var(--font-family-primary);
+  font-family: var(--font-family-kumbh-sans);
 }
 .btn--roboto {
   font-weight: var(--font-weight--regular);
-  font-family: var(--font-family-secondary);
+  font-family: var(--font-family-roboto-slab);
 }
 .btn--space {
   font-weight: var(--font-weight--bold);
-  font-family: var(--font-family-tertiary);
+  font-family: var(--font-family-space-mono);
 }
 .btn--active {
   color: var(--white);

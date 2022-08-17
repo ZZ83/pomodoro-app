@@ -19,20 +19,20 @@
     @extend %flex-center;
     @extend %border-radius50;
     &--font {
+        color: #575972;
         font-size: rem(15px);
-        color: var(--port-gore);
         background-color: var(--white-lilac);
     }
     &--kumbh {
-        font-family: var(--font-family-primary);
+        font-family: var(--font-family-kumbh-sans);
     }
     &--roboto {
         font-weight: var(--font-weight--regular);
-        font-family: var(--font-family-secondary);
+        font-family: var(--font-family-roboto-slab);
     }
     &--space {
         font-weight: var(--font-weight--bold );
-        font-family: var(--font-family-tertiary);
+        font-family: var(--font-family-space-mono);
     } 
     &--active {
         color: var(--white);
