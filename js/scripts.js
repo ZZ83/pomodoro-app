@@ -116,6 +116,7 @@ const body    = document.querySelector("body");
 const buttons = [...document.querySelectorAll(".btn-wrapper")];  
 const fontButtons  = buttons.splice(0, 3);
 const colorButtons = buttons.splice(-3);
+const h1 = document.querySelector(".timer__time");
 
 const colon = document.querySelector(".timer__colon");
 
@@ -125,7 +126,7 @@ fontButtons.forEach(element => {
             font = "var(--font-family-kumbh-sans)";
             removeClassFromListC(fontButtons, "btn--active")
             addClassTo(element.firstElementChild, "btn--active")
-
+            h1.style.fontWeight = "700";
             colon.style.margin = "0 5px";
             body.style.setProperty('--font-spacing', "-3px");
         }
@@ -133,7 +134,7 @@ fontButtons.forEach(element => {
             font = " var(--font-family-roboto-slab)";
             removeClassFromListC(fontButtons, "btn--active")
             addClassTo(element.firstElementChild, "btn--active")
-
+            h1.style.fontWeight = "700";
             colon.style.margin = "4px 0 0";
             body.style.setProperty('--font-spacing', 0);
         }
@@ -141,7 +142,7 @@ fontButtons.forEach(element => {
             font = "var(--font-family-space-mono)";
             removeClassFromListC(fontButtons, "btn--active")
             addClassTo(element.firstElementChild, "btn--active")
-
+            h1.style.fontWeight = "400";
             colon.style.margin= "4px -12px 0";
             body.style.setProperty('--font-spacing', 0);
         }
