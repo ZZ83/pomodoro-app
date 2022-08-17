@@ -1,4 +1,4 @@
-import {showOverlay, hideOverlay} from './overlay.js'
+import {showOverlay, hideOverlay} from './helpers.js'
 
 // //FUNCTIONS ------------------------------------------------------------------------
 function addClassTo(element, klass) {

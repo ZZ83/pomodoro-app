@@ -1,3 +1,5 @@
+import {addClassTo, removeClassFrom, removeClassFromList} from './helpers.js'
+
 /***************************************************** 
 ******************** SET VARIABLES ******************* 
 *****************************************************/
@@ -29,7 +31,8 @@ const applyButton  = document.querySelector(".apply-btn");
 *****************************************************/
 cycleButtons.forEach(element => {
     element.addEventListener("click", () => {
-        console.log("Dynamic");
+        removeClassFromList(cycleButtons, "cycle-btn--active");
+        addClassTo(element, "cycle-btn--active")
     })  
 })
 
