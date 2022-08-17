@@ -12,13 +12,14 @@
         height: rem(48px);
         font-size: rem(14px);
     }
-    &--active {
-        color: var(--port-gore);
-        opacity: initial;
-        background-color: var(--theme);
-    }
     &:hover {
         color: var(--periwinkle);
         opacity: initial;
+    }
+    &--active {
+        color: var(--port-gore);
+        background-color: var(--theme);
+        opacity: initial;
+        pointer-events: none;
     }
 }

@@ -525,14 +525,15 @@ button {
     font-size: 0.875rem;
   }
 }
-.cycle-btn--active {
-  color: var(--port-gore);
-  opacity: initial;
-  background-color: var(--theme);
-}
 .cycle-btn:hover {
   color: var(--periwinkle);
   opacity: initial;
+}
+.cycle-btn--active {
+  color: var(--port-gore);
+  background-color: var(--theme);
+  opacity: initial;
+  pointer-events: none;
 }
 
 .progress-bar {

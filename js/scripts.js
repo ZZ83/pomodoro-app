@@ -24,15 +24,12 @@ const colorButtons = buttons.splice(-3);
 const applyButton  = document.querySelector(".apply-btn");
 
 
-
-
-
 /***************************************************** 
 ************ CYCLE BUTTONS EVENT LISTENER ************ 
 *****************************************************/
 cycleButtons.forEach(element => {
     element.addEventListener("click", () => {
-
+        console.log("Dynamic");
     })  
 })
 
