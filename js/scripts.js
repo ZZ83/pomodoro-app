@@ -38,9 +38,10 @@ const applyButton  = document.querySelector(".apply-btn");
 const min         = document.querySelector(".time__min");
 const sec         = document.querySelector(".time__sec");
 
-const h1      = document.querySelector(".timer__time");
-const body    = document.querySelector("body");
-const colon   = document.querySelector(".timer__colon");
+const h1            = document.querySelector(".timer__time");
+const body          = document.querySelector("body");
+const colon         = document.querySelector(".timer__colon");
+const minutesInputs = document.querySelectorAll(".set-minutes__input");
 
 
 /***************************************************** 
@@ -108,15 +109,45 @@ closeSettingsButton.addEventListener("click", () => {
 /***************************************************** 
 ********* UP AND DOWN BUTTONS EVENT LISTENER *********
 *****************************************************/
-upButtons.forEach(element => {
+upButtons.forEach( (element, index) => {
     element.addEventListener("click", () => {
+        if(index === 0) {
+            pomodoro ++;
+            console.log("pomodoro:", pomodoro)
+            minutesInputs[0].value = pomodoro;
+        }
+        if(index === 1) {
+            shortBreak ++;
+            console.log("Short Break:", shortBreak)
+            minutesInputs[1].value = shortBreak;
+        }
+        if(index === 2) {
+            longBreak ++;
+            console.log("Long Break:", longBreak)
+            minutesInputs[2].value = longBreak;
+        }
         
     })  
 })
-downButtons.forEach(element => {
+
+downButtons.forEach( (element, index) => {
     element.addEventListener("click", () => {
-        
-    })  
+        if(index === 0) {
+            pomodoro --;
+            console.log("pomodoro:", pomodoro)
+            minutesInputs[0].value = pomodoro;
+        }
+        if(index === 1) {
+            shortBreak --;
+            console.log("Short Break:", shortBreak)
+            minutesInputs[1].value = shortBreak;
+        }
+        if(index === 2) {
+            longBreak --;
+            console.log("Long Break:", longBreak)
+            minutesInputs[2].value = longBreak;
+        }
+    })
 })
 
 
