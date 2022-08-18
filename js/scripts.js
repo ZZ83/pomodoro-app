@@ -112,40 +112,45 @@ closeSettingsButton.addEventListener("click", () => {
 upButtons.forEach( (element, index) => {
     element.addEventListener("click", () => {
         if(index === 0) {
-            pomodoro ++;
-            console.log("pomodoro:", pomodoro)
-            minutesInputs[0].value = pomodoro;
+            if(minutesInputs[0].value !== "90") {
+                pomodoro ++;
+                minutesInputs[0].value = pomodoro;
+            }
         }
         if(index === 1) {
-            shortBreak ++;
-            console.log("Short Break:", shortBreak)
-            minutesInputs[1].value = shortBreak;
+            if(minutesInputs[1].value !== "90") {
+                shortBreak ++;
+                minutesInputs[1].value = shortBreak;
+            }
         }
         if(index === 2) {
-            longBreak ++;
-            console.log("Long Break:", longBreak)
-            minutesInputs[2].value = longBreak;
+            if(minutesInputs[2].value !== "90") {
+                longBreak ++;
+                minutesInputs[2].value = longBreak;
+            }
         }
-        
     })  
 })
 
 downButtons.forEach( (element, index) => {
     element.addEventListener("click", () => {
         if(index === 0) {
-            pomodoro --;
-            console.log("pomodoro:", pomodoro)
-            minutesInputs[0].value = pomodoro;
+            if(minutesInputs[0].value !== "1") {
+                pomodoro --;
+                minutesInputs[0].value = pomodoro;
+            }
         }
         if(index === 1) {
-            shortBreak --;
-            console.log("Short Break:", shortBreak)
-            minutesInputs[1].value = shortBreak;
+            if(minutesInputs[1].value !== "1") {
+                shortBreak --;
+                minutesInputs[1].value = shortBreak;
+            }
         }
         if(index === 2) {
-            longBreak --;
-            console.log("Long Break:", longBreak)
-            minutesInputs[2].value = longBreak;
+            if(minutesInputs[2].value !== "1") {
+                longBreak --;
+                minutesInputs[2].value = longBreak;
+            }
         }
     })
 })
