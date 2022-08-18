@@ -37,33 +37,14 @@ cycleSection.addEventListener("click", (event) => {
 
 
 
-let isOverlayVisible = false;
 
-const overlay            = document.querySelector(".overlay");
-const settingButton      = document.querySelector(".settings-btn");
-const overlayCloseButton = document.querySelector(".settings__close-btn");
 
-function closeOverlayIfVisible() {
-    if (isOverlayVisible) {
-        hideOverlay();
-        isOverlayVisible = false;
-    }
-}
 
-settingButton.addEventListener("click", () => {
-    showOverlay();
-    isOverlayVisible = true;
-})
 
-overlay.addEventListener("click", (event) => {
-    if(event.target.tagName === "DIV" &&  event.target.className === "overlay") {
-        closeOverlayIfVisible();
-    }
-})
 
-overlayCloseButton.addEventListener("click", () => {
-   closeOverlayIfVisible();
-})
+
+
+
 
 
 

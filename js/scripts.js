@@ -8,26 +8,28 @@ let shortBreak = 5;
 let longBreak  = 15;
 
 let timerIsRunning = false;
+let isSettingsVisible = false;
+
 
 
 /***************************************************** 
 ***************** SELECT DOM ELEMENTS **************** 
 *****************************************************/
-
 // Main page elements
-const cycleButtons       = document.querySelectorAll(".cycle-btn");
-const timerButton        = document.querySelector(".timer__btn");
-const settingButton      = document.querySelector(".settings-btn");
+const cycleButtons        = document.querySelectorAll(".cycle-btn");
+const timerButton         = document.querySelector(".timer__btn");
+const openSettingsButton  = document.querySelector(".settings-btn");
 
 // Settings component elements
-const overlayCloseButton = document.querySelector(".settings__close-btn");
-const upButtons          = document.querySelectorAll(".set-minutes__up");
-const downButtons        = document.querySelectorAll(".set-minutes__down");
+const closeSettingsButton = document.querySelector(".settings__close-btn");
+const upButtons           = document.querySelectorAll(".set-minutes__up");
+const downButtons         = document.querySelectorAll(".set-minutes__down");
 
 const buttons      = [...document.querySelectorAll(".btn-wrapper")];  
 const fontButtons  = buttons.splice(0, 3);
 const colorButtons = buttons.splice(-3);
 
+const overlay      = document.querySelector(".overlay");
 const applyButton  = document.querySelector(".apply-btn");
 
 // Timer minutes and seconds elements
@@ -36,7 +38,18 @@ const sec         = document.querySelector(".time__sec");
 
 
 
-
+/***************************************************** 
+********************** FUNTIONS ********************** 
+*****************************************************/
+function toggleSettings() {
+    if (isSettingsVisible) {
+        overlay.style.display = "none";
+        isSettingsVisible = false;
+    } else {
+        overlay.style.display = "block";
+        isSettingsVisible = true;
+    }
+}
 
 
 
@@ -57,6 +70,8 @@ cycleButtons.forEach(element => {
     })  
 })
 
+
+
 /***************************************************** 
 ************* TIMER BUTTON EVENT LISTENER ************ 
 *****************************************************/
@@ -70,19 +85,25 @@ timerButton.addEventListener("click", () => {
     }
 })
 
-/***************************************************** 
-************ SETTINGS BUTTON EVENT LISTENER ********** 
-*****************************************************/
-settingButton.addEventListener("click", () => {
-   
-})
+
 
 /***************************************************** 
-********* OVERLAY CLOSE BUTTON EVENT LISTENER ********
+********** OPEN SETTINGS BUTTON EVENT LISTENER *******
 *****************************************************/
-overlayCloseButton.addEventListener("click", () => {
-   
+openSettingsButton.addEventListener("click", () => {
+    toggleSettings();
 })
+
+
+
+/***************************************************** 
+********* CLOSE SETTINGS BUTTON EVENT LISTENER *******
+*****************************************************/
+closeSettingsButton.addEventListener("click", () => {
+    toggleSettings();
+})
+
+
 
 /***************************************************** 
 ********* UP AND DOWN BUTTONS EVENT LISTENER *********
@@ -98,6 +119,8 @@ downButtons.forEach(element => {
     })  
 })
 
+
+
 /***************************************************** 
 ******** FONT AND COLOR BUTTONS EVENT LISTENER ******* 
 *****************************************************/
@@ -112,9 +135,24 @@ colorButtons.forEach(element => {
     })  
 })
 
+
+
+/***************************************************** 
+**************** OVERLAY EVENT LISTENER ************** 
+*****************************************************/
+overlay.addEventListener("click", (event) => {
+    if(event.target.tagName === "DIV" &&  event.target.className === "overlay") {
+        toggleSettings();
+    }
+})
+
+
+
 /***************************************************** 
 ************* APPLY BUTTON EVENT LISTENER ************ 
 *****************************************************/
 applyButton.addEventListener("click", () => {
-   
+    toggleSettings();
 })
+
+
