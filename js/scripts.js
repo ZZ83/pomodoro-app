@@ -7,6 +7,8 @@ let pomodoro   = 25;
 let shortBreak = 5;
 let longBreak  = 15;
 
+let timerIsRunning = false;
+
 
 /***************************************************** 
 ***************** SELECT DOM ELEMENTS **************** 
@@ -46,17 +48,11 @@ cycleButtons.forEach(element => {
         removeClassFromList(cycleButtons, "cycle-btn--active");
         addClassTo(element, "cycle-btn--active");
         if (element.innerHTML === "pomodoro") {
-
             setMinutes(pomodoro, min);
-
         } else if (element.innerHTML === "short break") {
-
             setMinutes(shortBreak, min);
-
         } else if (element.innerHTML === "long break") {
-
             setMinutes(longBreak, min);
-
         }
     })  
 })
@@ -65,7 +61,13 @@ cycleButtons.forEach(element => {
 ************* TIMER BUTTON EVENT LISTENER ************ 
 *****************************************************/
 timerButton.addEventListener("click", () => {
-   
+    if (timerIsRunning === false) {
+        timerButton.firstElementChild.innerHTML = "pause";
+        timerIsRunning = true;
+    } else if (timerIsRunning === true) {
+        timerButton.firstElementChild.innerHTML = "start";
+        timerIsRunning = false;
+    }
 })
 
 /***************************************************** 
