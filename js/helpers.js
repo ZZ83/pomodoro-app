@@ -13,6 +13,12 @@ export function removeClassFromList(list, klass) {
     })
 };
 
+export function removeClassFromListC(list, klass) {
+    list.forEach(item => {
+        removeClassFrom(item.firstElementChild, klass)
+    })
+};
+
 export function addLeadingZeros(num) {
     return "0" + num.toString()
 }

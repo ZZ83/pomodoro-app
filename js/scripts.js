@@ -1,15 +1,17 @@
-import {addClassTo, removeClassFromList, setMinutes} from './helpers.js'
+import {addClassTo, removeClassFromList, removeClassFromListC, setMinutes} from './helpers.js'
 
 /***************************************************** 
 ******************** SET VARIABLES ******************* 
 *****************************************************/
+let font  = "";
+let color = "";
+
 let pomodoro   = 25;
 let shortBreak = 5;
 let longBreak  = 15;
 
 let timerIsRunning = false;
 let isSettingsVisible = false;
-
 
 
 /***************************************************** 
@@ -36,6 +38,9 @@ const applyButton  = document.querySelector(".apply-btn");
 const min         = document.querySelector(".time__min");
 const sec         = document.querySelector(".time__sec");
 
+const h1      = document.querySelector(".timer__time");
+const body    = document.querySelector("body");
+const colon   = document.querySelector(".timer__colon");
 
 
 /***************************************************** 
@@ -50,7 +55,6 @@ function toggleSettings() {
         isSettingsVisible = true;
     }
 }
-
 
 
 /***************************************************** 
@@ -71,7 +75,6 @@ cycleButtons.forEach(element => {
 })
 
 
-
 /***************************************************** 
 ************* TIMER BUTTON EVENT LISTENER ************ 
 *****************************************************/
@@ -86,7 +89,6 @@ timerButton.addEventListener("click", () => {
 })
 
 
-
 /***************************************************** 
 ********** OPEN SETTINGS BUTTON EVENT LISTENER *******
 *****************************************************/
@@ -95,14 +97,12 @@ openSettingsButton.addEventListener("click", () => {
 })
 
 
-
 /***************************************************** 
 ********* CLOSE SETTINGS BUTTON EVENT LISTENER *******
 *****************************************************/
 closeSettingsButton.addEventListener("click", () => {
     toggleSettings();
 })
-
 
 
 /***************************************************** 
@@ -120,21 +120,63 @@ downButtons.forEach(element => {
 })
 
 
-
 /***************************************************** 
 ******** FONT AND COLOR BUTTONS EVENT LISTENER ******* 
 *****************************************************/
 fontButtons.forEach(element => {
     element.addEventListener("click", () => {
-        
-    })  
-})
-colorButtons.forEach(element => {
-    element.addEventListener("click", () => {
-        
+        if( element.firstElementChild.classList.contains("btn--kumbh") ) {
+            font = "var(--font-family-kumbh-sans)";
+            removeClassFromListC(fontButtons, "btn--active")
+            addClassTo(element.firstElementChild, "btn--active")
+            h1.style.fontWeight = "700";
+            colon.style.margin = "0 5px";
+            body.style.setProperty('--font-spacing', "-3px");
+        }
+        if( element.firstElementChild.classList.contains("btn--roboto") ) {
+            font = " var(--font-family-roboto-slab)";
+            removeClassFromListC(fontButtons, "btn--active")
+            addClassTo(element.firstElementChild, "btn--active")
+            h1.style.fontWeight = "700";
+            colon.style.margin = "4px 0 0";
+            body.style.setProperty('--font-spacing', 0);
+        }
+        if( element.firstElementChild.classList.contains("btn--space") ) {
+            font = "var(--font-family-space-mono)";
+            removeClassFromListC(fontButtons, "btn--active")
+            addClassTo(element.firstElementChild, "btn--active")
+            h1.style.fontWeight = "400";
+            colon.style.margin= "4px -12px 0";
+            body.style.setProperty('--font-spacing', 0);
+        }
     })  
 })
 
+colorButtons.forEach(element => {
+    element.addEventListener("click", () => {
+        if( element.firstElementChild.classList.contains("btn--color-froly") ) {
+            color = "var(--froly)";
+            colorButtons.forEach(element => {
+               element.firstElementChild.innerHTML = "";
+            })
+            element.firstElementChild.innerHTML = "&check;";
+        }
+        if( element.firstElementChild.classList.contains("btn--color-malibu") ) {
+            color = "var(--malibu)";
+            colorButtons.forEach(element => {
+                element.firstElementChild.innerHTML = "";
+             })
+             element.firstElementChild.innerHTML = "&check;";
+        }
+        if( element.firstElementChild.classList.contains("btn--color-heliotrope") ) {
+            color = "var(--heliotrope)";
+            colorButtons.forEach(element => {
+                element.firstElementChild.innerHTML = "";
+             })
+             element.firstElementChild.innerHTML = "&check;";
+        }
+    })  
+})
 
 
 /***************************************************** 
@@ -147,12 +189,16 @@ overlay.addEventListener("click", (event) => {
 })
 
 
-
 /***************************************************** 
 ************* APPLY BUTTON EVENT LISTENER ************ 
 *****************************************************/
 applyButton.addEventListener("click", () => {
+    body.style.setProperty('--theme', color);
+    body.style.setProperty('--font-family-primary', font);
     toggleSettings();
 })
+
+
+
 
 
