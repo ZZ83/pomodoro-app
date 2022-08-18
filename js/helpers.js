@@ -21,3 +21,15 @@ export function removeClassFromList(list, klass) {
         removeClassFrom(item, klass)
     })
 };
+
+export function addLeadingZeros(num) {
+    return "0" + num.toString()
+}
+
+export function setMinutes(minutes, element) {
+    if (minutes < 10) {
+        element.innerHTML = addLeadingZeros(minutes);
+    } else {
+        element.innerHTML = minutes;
+    }
+}

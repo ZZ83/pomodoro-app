@@ -1,8 +1,11 @@
-import {addClassTo, removeClassFrom, removeClassFromList} from './helpers.js'
+import {addClassTo, removeClassFromList, setMinutes} from './helpers.js'
 
 /***************************************************** 
 ******************** SET VARIABLES ******************* 
 *****************************************************/
+let pomodoro   = 25;
+let shortBreak = 5;
+let longBreak  = 15;
 
 
 /***************************************************** 
@@ -25,6 +28,15 @@ const colorButtons = buttons.splice(-3);
 
 const applyButton  = document.querySelector(".apply-btn");
 
+// Timer minutes and seconds elements
+const min         = document.querySelector(".time__min");
+const sec         = document.querySelector(".time__sec");
+
+
+
+
+
+
 
 /***************************************************** 
 ************ CYCLE BUTTONS EVENT LISTENER ************ 
@@ -32,7 +44,20 @@ const applyButton  = document.querySelector(".apply-btn");
 cycleButtons.forEach(element => {
     element.addEventListener("click", () => {
         removeClassFromList(cycleButtons, "cycle-btn--active");
-        addClassTo(element, "cycle-btn--active")
+        addClassTo(element, "cycle-btn--active");
+        if (element.innerHTML === "pomodoro") {
+
+            setMinutes(pomodoro, min);
+
+        } else if (element.innerHTML === "short break") {
+
+            setMinutes(shortBreak, min);
+
+        } else if (element.innerHTML === "long break") {
+
+            setMinutes(longBreak, min);
+
+        }
     })  
 })
 
