@@ -1,4 +1,3 @@
-
 export function addClassTo(element, klass) {
     element.classList.add(klass);
 }

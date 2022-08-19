@@ -1,4 +1,4 @@
-import {addClassTo, removeClassFromList, removeClassFromListC, setMinutes} from './helpers.js'
+import {addClassTo, addLeadingZeros, removeClassFromList, removeClassFromListC, setMinutes} from './helpers.js'
 
 /***************************************************** 
 ******************** SET VARIABLES ******************* 
@@ -67,10 +67,16 @@ cycleButtons.forEach(element => {
         addClassTo(element, "cycle-btn--active");
         if (element.innerHTML === "pomodoro") {
             setMinutes(pomodoro, min);
+            minutes = pomodoro;
+            sec.innerHTML = "00";
         } else if (element.innerHTML === "short break") {
             setMinutes(shortBreak, min);
+            minutes = shortBreak;
+            sec.innerHTML = "00";
         } else if (element.innerHTML === "long break") {
             setMinutes(longBreak, min);
+            minutes = longBreak;
+            sec.innerHTML = "00";
         }
     })  
 })
@@ -79,13 +85,57 @@ cycleButtons.forEach(element => {
 /***************************************************** 
 ************* TIMER BUTTON EVENT LISTENER ************ 
 *****************************************************/
-timerButton.addEventListener("click", () => {
-    if (timerIsRunning === false) {
-        timerButton.firstElementChild.innerHTML = "pause";
+
+let timer;
+let seconds = 10;
+let minutes = 0;
+
+
+
+function toggleTimer(time) {
+    if(timerIsRunning === false) {
         timerIsRunning = true;
-    } else if (timerIsRunning === true) {
-        timerButton.firstElementChild.innerHTML = "start";
+        timer = setInterval(function() { 
+            if (seconds < 10) {
+                seconds = addLeadingZeros(seconds);
+            }
+            if (minutes < 10) {
+                minutes = addLeadingZeros(minutes);
+            }
+            min.innerHTML = minutes.toString();
+            sec.innerHTML = seconds.toString();
+            minutes = parseFloat(minutes);
+            if (seconds === "00" && minutes == "00" ) {
+                timerButton.firstElementChild.innerHTML = "RESTART";
+                clearInterval(timer);
+            }
+            if (seconds === "00") {
+                seconds = 60;
+                minutes --;
+            }
+            seconds --;
+        }, 1000);
+    } else {
+        clearInterval(timer);
         timerIsRunning = false;
+    }
+}
+
+
+
+
+
+
+timerButton.addEventListener("click", () => {
+    if( timerButton.firstElementChild.innerHTML === "start") {
+        timerButton.firstElementChild.innerHTML = "pause";
+        toggleTimer();
+    } else if (timerButton.firstElementChild.innerHTML === "pause") {
+        timerButton.firstElementChild.innerHTML = "start";
+        toggleTimer();
+        console.log("Start")
+    } else if (timerButton.firstElementChild.innerHTML === "restart") {
+
     }
 })
 
@@ -233,7 +283,6 @@ applyButton.addEventListener("click", () => {
     body.style.setProperty('--font-family-primary', font);
     toggleSettings();
 })
-
 
 
 
