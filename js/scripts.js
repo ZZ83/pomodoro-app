@@ -1,17 +1,14 @@
-import {addClassTo, addLeadingZeros, removeClassFromList, setMinutes} from './helpers.js'
-import {setFontsAndColors} from './fonts&colors.js'
-import {ele} from './elements.js'
+import {addClassTo, addLeadingZeros, removeClassFromList, setMinute} from './helpers.js'
+import { setFontsAndColors } from './fonts&colors.js'
+import { ele } from './elements.js'
+import { setMinutes } from './set_minutes.js'
 
 /***************************************************** 
 ******************** SET VARIABLES ******************* 
 *****************************************************/
-let pomodoro   = 25;
-let shortBreak = 5;
-let longBreak  = 15;
 
 let timerIsRunning = false;
 let isSettingsVisible = false;
-
 
 /***************************************************** 
 ***************** SELECT DOM ELEMENTS **************** 
@@ -23,11 +20,6 @@ const openSettingsButton  = document.querySelector(".settings-btn");
 
 // Settings component elements
 const closeSettingsButton = document.querySelector(".settings__close-btn");
-const upButtons           = document.querySelectorAll(".set-minutes__up");
-const downButtons         = document.querySelectorAll(".set-minutes__down");
-
-
-
 const overlay      = document.querySelector(".overlay");
 const applyButton  = document.querySelector(".apply-btn");
 
@@ -36,9 +28,6 @@ const min         = document.querySelector(".time__min");
 const sec         = document.querySelector(".time__sec");
 
 
-const body          = document.querySelector("body");
-
-const minutesInputs = document.querySelectorAll(".set-minutes__input");
 
 
 /***************************************************** 
@@ -63,15 +52,15 @@ cycleButtons.forEach(element => {
         removeClassFromList(cycleButtons, "cycle-btn--active");
         addClassTo(element, "cycle-btn--active");
         if (element.innerHTML === "pomodoro") {
-            setMinutes(pomodoro, min);
+            setMinute(pomodoro, min);
             minutes = pomodoro;
             sec.innerHTML = "00";
         } else if (element.innerHTML === "short break") {
-            setMinutes(shortBreak, min);
+            setMinute(shortBreak, min);
             minutes = shortBreak;
             sec.innerHTML = "00";
         } else if (element.innerHTML === "long break") {
-            setMinutes(longBreak, min);
+            setMinute(longBreak, min);
             minutes = longBreak;
             sec.innerHTML = "00";
         }
@@ -156,57 +145,14 @@ closeSettingsButton.addEventListener("click", () => {
 /***************************************************** 
 ********* UP AND DOWN BUTTONS EVENT LISTENER *********
 *****************************************************/
-upButtons.forEach( (element, index) => {
-    element.addEventListener("click", () => {
-        if(index === 0) {
-            if(minutesInputs[0].value !== "90") {
-                pomodoro ++;
-                minutesInputs[0].value = pomodoro;
-            }
-        }
-        if(index === 1) {
-            if(minutesInputs[1].value !== "90") {
-                shortBreak ++;
-                minutesInputs[1].value = shortBreak;
-            }
-        }
-        if(index === 2) {
-            if(minutesInputs[2].value !== "90") {
-                longBreak ++;
-                minutesInputs[2].value = longBreak;
-            }
-        }
-    })  
-})
-
-downButtons.forEach( (element, index) => {
-    element.addEventListener("click", () => {
-        if(index === 0) {
-            if(minutesInputs[0].value !== "1") {
-                pomodoro --;
-                minutesInputs[0].value = pomodoro;
-            }
-        }
-        if(index === 1) {
-            if(minutesInputs[1].value !== "1") {
-                shortBreak --;
-                minutesInputs[1].value = shortBreak;
-            }
-        }
-        if(index === 2) {
-            if(minutesInputs[2].value !== "1") {
-                longBreak --;
-                minutesInputs[2].value = longBreak;
-            }
-        }
-    })
-})
+setMinutes();
 
 
 /***************************************************** 
 ******** FONT AND COLOR BUTTONS EVENT LISTENER ******* 
 *****************************************************/
 setFontsAndColors();
+
 
 /***************************************************** 
 **************** OVERLAY EVENT LISTENER ************** 
@@ -222,8 +168,8 @@ overlay.addEventListener("click", (event) => {
 ************* APPLY BUTTON EVENT LISTENER ************ 
 *****************************************************/
 applyButton.addEventListener("click", () => {
-    body.style.setProperty('--theme', ele.color);
-    body.style.setProperty('--font-family-primary', ele.font);
+    ele.body.style.setProperty('--theme', ele.color);
+    ele.body.style.setProperty('--font-family-primary', ele.font);
     toggleSettings();
 })
 
