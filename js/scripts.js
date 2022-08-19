@@ -2,81 +2,37 @@ import {addClassTo, addLeadingZeros, removeClassFromList, setMinute} from './hel
 import { setFontsAndColors } from './fonts&colors.js'
 import { ele } from './elements.js'
 import { setMinutes } from './set_minutes.js'
+import { setCycles } from './cycles.js'
 
 /***************************************************** 
 ******************** SET VARIABLES ******************* 
 *****************************************************/
-
 let timerIsRunning = false;
 let isSettingsVisible = false;
 
-/***************************************************** 
-***************** SELECT DOM ELEMENTS **************** 
-*****************************************************/
-// Main page elements
-const cycleButtons        = document.querySelectorAll(".cycle-btn");
-const timerButton         = document.querySelector(".timer__btn");
-const openSettingsButton  = document.querySelector(".settings-btn");
-
-// Settings component elements
-const closeSettingsButton = document.querySelector(".settings__close-btn");
-const overlay      = document.querySelector(".overlay");
-const applyButton  = document.querySelector(".apply-btn");
-
-// Timer minutes and seconds elements
-const min         = document.querySelector(".time__min");
-const sec         = document.querySelector(".time__sec");
+/*************** SELECT DOM ELEMENTS ************/
+const min          = document.querySelector(".time__min");
+const sec          = document.querySelector(".time__sec");
+const timerButton  = document.querySelector(".timer__btn");
 
 
-
-
-/***************************************************** 
-********************** FUNTIONS ********************** 
-*****************************************************/
 function toggleSettings() {
     if (isSettingsVisible) {
-        overlay.style.display = "none";
+        ele.overlay.style.display = "none";
         isSettingsVisible = false;
     } else {
-        overlay.style.display = "block";
+        ele.overlay.style.display = "block";
         isSettingsVisible = true;
     }
 }
 
 
 /***************************************************** 
-************ CYCLE BUTTONS EVENT LISTENER ************ 
-*****************************************************/
-cycleButtons.forEach(element => {
-    element.addEventListener("click", () => {
-        removeClassFromList(cycleButtons, "cycle-btn--active");
-        addClassTo(element, "cycle-btn--active");
-        if (element.innerHTML === "pomodoro") {
-            setMinute(pomodoro, min);
-            minutes = pomodoro;
-            sec.innerHTML = "00";
-        } else if (element.innerHTML === "short break") {
-            setMinute(shortBreak, min);
-            minutes = shortBreak;
-            sec.innerHTML = "00";
-        } else if (element.innerHTML === "long break") {
-            setMinute(longBreak, min);
-            minutes = longBreak;
-            sec.innerHTML = "00";
-        }
-    })  
-})
-
-
-/***************************************************** 
 ************* TIMER BUTTON EVENT LISTENER ************ 
 *****************************************************/
-
 let timer;
 let seconds = 10;
 let minutes = 0;
-
-
 
 function toggleTimer(time) {
     if(timerIsRunning === false) {
@@ -107,11 +63,6 @@ function toggleTimer(time) {
     }
 }
 
-
-
-
-
-
 timerButton.addEventListener("click", () => {
     if( timerButton.firstElementChild.innerHTML === "start") {
         timerButton.firstElementChild.innerHTML = "pause";
@@ -126,53 +77,29 @@ timerButton.addEventListener("click", () => {
 })
 
 
-/***************************************************** 
-********** OPEN SETTINGS BUTTON EVENT LISTENER *******
-*****************************************************/
-openSettingsButton.addEventListener("click", () => {
+
+ele.openSettingsButton.addEventListener("click", () => {
     toggleSettings();
 })
 
-
-/***************************************************** 
-********* CLOSE SETTINGS BUTTON EVENT LISTENER *******
-*****************************************************/
-closeSettingsButton.addEventListener("click", () => {
+ele.closeSettingsButton.addEventListener("click", () => {
     toggleSettings();
 })
 
-
-/***************************************************** 
-********* UP AND DOWN BUTTONS EVENT LISTENER *********
-*****************************************************/
-setMinutes();
-
-
-/***************************************************** 
-******** FONT AND COLOR BUTTONS EVENT LISTENER ******* 
-*****************************************************/
-setFontsAndColors();
-
-
-/***************************************************** 
-**************** OVERLAY EVENT LISTENER ************** 
-*****************************************************/
-overlay.addEventListener("click", (event) => {
-    if(event.target.tagName === "DIV" &&  event.target.className === "overlay") {
-        toggleSettings();
-    }
-})
-
-
-/***************************************************** 
-************* APPLY BUTTON EVENT LISTENER ************ 
-*****************************************************/
-applyButton.addEventListener("click", () => {
+ele.applyButton.addEventListener("click", () => {
     ele.body.style.setProperty('--theme', ele.color);
     ele.body.style.setProperty('--font-family-primary', ele.font);
     toggleSettings();
 })
 
+ele.overlay.addEventListener("click", (event) => {
+    if(event.target.tagName === "DIV" &&  event.target.className === "overlay") {
+        toggleSettings();
+    }
+})
 
+setCycles();
+setMinutes();
+setFontsAndColors();
 
 

@@ -22,7 +22,6 @@ export function addLeadingZeros(num) {
     return "0" + num.toString()
 }
 
-
 // Adds zeros to minutes less then 10
 export function setMinute(minutes, element) {
     if (minutes < 10) {
