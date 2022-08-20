@@ -1,5 +1,6 @@
-import {addClassTo, removeClassFromList, setMinute, stopTimer} from './helpers.js'
+import {addClassTo, removeClassFromList, setMinute} from './helpers.js'
 import { ele } from './elements.js'
+import { stopTimer } from './timer.js';
 
 export function setCycles() {
     ele.cycleButtons.forEach(element => {

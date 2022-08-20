@@ -24,7 +24,6 @@ export function addLeadingZeros(num) {
     return "0" + num.toString()
 }
 
-// Adds zeros to minutes less then 10
 export function setMinute(minutes, element) {
     if (minutes < 10) {
         element.innerHTML = addLeadingZeros(minutes);
@@ -33,8 +32,12 @@ export function setMinute(minutes, element) {
     }
 }
 
-
-export function stopTimer() {
-    clearInterval(ele.timer);
-    ele.timerIsRunning = false;
+export function toggleSettings() {
+    if (ele.isSettingsVisible) {
+        ele.overlay.style.display = "none";
+        ele.isSettingsVisible = false;
+    } else {
+        ele.overlay.style.display = "block";
+        ele.isSettingsVisible = true;
+    }
 }

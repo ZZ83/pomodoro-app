@@ -6,6 +6,8 @@ export const ele = {
     shortBreak: 5,
     longBreak : 15,
     timerIsRunning: false,
+    isSettingsVisible: false,
+    minutes: 25,
     timer: null,
     /*********************** BUTTONS ELEMENTS ***********************/
     cycleButtons:        document.querySelectorAll(".cycle-btn"),
