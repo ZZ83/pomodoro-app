@@ -1,9 +1,9 @@
-import { toggleSettings }        from './helpers.js'
-import { startTimer, stopTimer } from './timer.js'
-import { setFontsAndColors }     from './fonts&colors.js'
-import { setMinutes }            from './set_minutes.js'
-import { setCycles }             from './cycles.js'
-import { ele }                   from './elements.js'
+import { setInputs, toggleSettings } from './helpers.js'
+import { startTimer, stopTimer }     from './timer.js'
+import { setFontsAndColors }         from './fonts&colors.js'
+import { setMinutes }                from './set_minutes.js'
+import { setCycles }                 from './cycles.js'
+import { ele }                       from './elements.js'
 
 ele.timerButton.addEventListener("click", () => {
     if( ele.timerButton.firstElementChild.innerHTML === "start") {
@@ -23,17 +23,27 @@ ele.openSettingsButton.addEventListener("click", () => {
 })
 
 ele.closeSettingsButton.addEventListener("click", () => {
+    setInputs();
     toggleSettings();
 })
 
 ele.applyButton.addEventListener("click", () => {
     ele.body.style.setProperty('--theme', ele.color);
     ele.body.style.setProperty('--font-family-primary', ele.font);
+    
+    ele.minutesInputs[0].value = ele.minutesInputs[0].value;
+    ele.minutesInputs[1].value = ele.minutesInputs[1].value;
+    ele.minutesInputs[2].value = ele.minutesInputs[2].value;
+
+    ele.pomodoro   = parseInt(ele.minutesInputs[0].value);
+    ele.shortBreak = parseInt(ele.minutesInputs[1].value);
+    ele.longBreak  = parseInt(ele.minutesInputs[2].value);
     toggleSettings();
 })
 
 ele.overlay.addEventListener("click", (event) => {
     if(event.target.tagName === "DIV" &&  event.target.className === "overlay") {
+        setInputs();
         toggleSettings();
     }
 })

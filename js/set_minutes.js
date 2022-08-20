@@ -8,21 +8,24 @@ export function setMinutes() {
     upButtons.forEach( (element, index) => {
         element.addEventListener("click", () => {
             if(index === 0) {
-                if(minutesInputs[0].value !== "90") {
-                    ele.pomodoro ++;
-                    minutesInputs[0].value = ele.pomodoro;
+                if(minutesInputs[index].value !== "90") {
+                    let number = parseInt(minutesInputs[index].value);
+                    number ++;
+                    minutesInputs[index].value =  number;
                 }
             }
             if(index === 1) {
-                if(minutesInputs[1].value !== "90") {
-                    ele.shortBreak ++;
-                    minutesInputs[1].value = ele.shortBreak;
+                if(minutesInputs[index].value !== "90") {
+                    let number = parseInt(minutesInputs[index].value);
+                    number ++;
+                    minutesInputs[index].value =  number;
                 }
             }
             if(index === 2) {
-                if(minutesInputs[2].value !== "90") {
-                    ele.longBreak ++;
-                    minutesInputs[2].value = ele.longBreak;
+                if(minutesInputs[index].value !== "90") {
+                    let number = parseInt(minutesInputs[index].value);
+                    number ++;
+                    minutesInputs[index].value =  number;
                 }
             }
         })  
@@ -30,21 +33,24 @@ export function setMinutes() {
     downButtons.forEach( (element, index) => {
         element.addEventListener("click", () => {
             if(index === 0) {
-                if(minutesInputs[0].value !== "1") {
-                    ele.pomodoro --;
-                    minutesInputs[0].value = ele.pomodoro;
+                if(minutesInputs[index].value !== "1") {
+                    let number = parseInt(minutesInputs[index].value);
+                    number --;
+                    minutesInputs[index].value =  number;
                 }
             }
             if(index === 1) {
-                if(minutesInputs[1].value !== "1") {
-                    ele.shortBreak --;
-                    minutesInputs[1].value = ele.shortBreak;
+                if(minutesInputs[index].value !== "1") {
+                    let number = parseInt(minutesInputs[index].value);
+                    number --;
+                    minutesInputs[index].value =  number;
                 }
             }
             if(index === 2) {
-                if(minutesInputs[2].value !== "1") {
-                    ele.longBreak --;
-                    minutesInputs[2].value = ele.longBreak;
+                if(minutesInputs[index].value !== "1") {
+                    let number = parseInt(minutesInputs[index].value);
+                    number --;
+                    minutesInputs[index].value =  number;
                 }
             }
         })

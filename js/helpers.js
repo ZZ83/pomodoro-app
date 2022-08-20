@@ -41,3 +41,9 @@ export function toggleSettings() {
         ele.isSettingsVisible = true;
     }
 }
+
+export function setInputs() {
+    ele.minutesInputs[0].value = ele.pomodoro;
+    ele.minutesInputs[1].value = ele.shortBreak;
+    ele.minutesInputs[2].value = ele.longBreak;
+}
