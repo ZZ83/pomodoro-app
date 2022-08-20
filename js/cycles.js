@@ -12,18 +12,21 @@ export function setCycles() {
                 setMinute(ele.pomodoro, ele.min);
                 ele.minutes = ele.pomodoro;
                 ele.sec.innerHTML = "00";
+                ele.currentCycle = parseInt(ele.pomodoro);
                 stopTimer();
             } else if (element.innerHTML === "short break") {
                 ele.timerButton.firstElementChild.innerHTML = "start";
                 setMinute(ele.shortBreak, ele.min);
                 ele.minutes = ele.shortBreak;
                 ele.sec.innerHTML = "00";
+                ele.currentCycle = parseInt(ele.shortBreak);
                 stopTimer();
             } else if (element.innerHTML === "long break") {
                 ele.timerButton.firstElementChild.innerHTML = "start";
                 setMinute(ele.longBreak, ele.min);
                 ele.minutes = ele.longBreak;
                 ele.sec.innerHTML = "00";
+                ele.currentCycle = parseInt(ele.longBreak);
                 stopTimer();
             }
         })  

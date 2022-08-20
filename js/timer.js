@@ -22,7 +22,7 @@ export function startTimer(time) {
                 ele.timerButton.firstElementChild.innerHTML = "restart";
                 stopTimer();
                 seconds = 59;
-                ele.minutes = ele.pomodoro;
+                ele.minutes = ele.currentCycle;
             }
             if (seconds === "00") {
                 seconds = 60;
