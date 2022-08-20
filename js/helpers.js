@@ -1,3 +1,5 @@
+import { ele } from './elements.js'
+
 export function addClassTo(element, klass) {
     element.classList.add(klass);
 }
@@ -29,4 +31,10 @@ export function setMinute(minutes, element) {
     } else {
         element.innerHTML = minutes;
     }
+}
+
+
+export function stopTimer() {
+    clearInterval(ele.timer);
+    ele.timerIsRunning = false;
 }

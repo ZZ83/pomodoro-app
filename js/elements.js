@@ -5,6 +5,8 @@ export const ele = {
     pomodoro  : 25,
     shortBreak: 5,
     longBreak : 15,
+    timerIsRunning: false,
+    timer: null,
     /*********************** BUTTONS ELEMENTS ***********************/
     cycleButtons:        document.querySelectorAll(".cycle-btn"),
     timerButton:         document.querySelector(".timer__btn"),

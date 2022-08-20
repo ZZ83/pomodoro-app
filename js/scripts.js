@@ -1,4 +1,4 @@
-import {addClassTo, addLeadingZeros, removeClassFromList, setMinute} from './helpers.js'
+import { addLeadingZeros, stopTimer } from './helpers.js'
 import { setFontsAndColors } from './fonts&colors.js'
 import { ele } from './elements.js'
 import { setMinutes } from './set_minutes.js'
@@ -7,13 +7,11 @@ import { setCycles } from './cycles.js'
 /***************************************************** 
 ******************** SET VARIABLES ******************* 
 *****************************************************/
-let timerIsRunning = false;
 let isSettingsVisible = false;
 
 /*************** SELECT DOM ELEMENTS ************/
 const min          = document.querySelector(".time__min");
 const sec          = document.querySelector(".time__sec");
-const timerButton  = document.querySelector(".timer__btn");
 
 
 function toggleSettings() {
@@ -30,14 +28,14 @@ function toggleSettings() {
 /***************************************************** 
 ************* TIMER BUTTON EVENT LISTENER ************ 
 *****************************************************/
-let timer;
+
 let seconds = 10;
 let minutes = 0;
 
-function toggleTimer(time) {
-    if(timerIsRunning === false) {
-        timerIsRunning = true;
-        timer = setInterval(function() { 
+function startTimer(time) {
+    if(ele.timerIsRunning === false) {
+        ele.timerIsRunning = true;
+        ele.timer = setInterval(function() { 
             if (seconds < 10) {
                 seconds = addLeadingZeros(seconds);
             }
@@ -48,8 +46,8 @@ function toggleTimer(time) {
             sec.innerHTML = seconds.toString();
             minutes = parseFloat(minutes);
             if (seconds === "00" && minutes == "00" ) {
-                timerButton.firstElementChild.innerHTML = "RESTART";
-                clearInterval(timer);
+                ele.timerButton.firstElementChild.innerHTML = "RESTART";
+                stopTimer();
             }
             if (seconds === "00") {
                 seconds = 60;
@@ -57,24 +55,77 @@ function toggleTimer(time) {
             }
             seconds --;
         }, 1000);
-    } else {
-        clearInterval(timer);
-        timerIsRunning = false;
     }
 }
 
-timerButton.addEventListener("click", () => {
-    if( timerButton.firstElementChild.innerHTML === "start") {
-        timerButton.firstElementChild.innerHTML = "pause";
-        toggleTimer();
-    } else if (timerButton.firstElementChild.innerHTML === "pause") {
-        timerButton.firstElementChild.innerHTML = "start";
-        toggleTimer();
-        console.log("Start")
-    } else if (timerButton.firstElementChild.innerHTML === "restart") {
+
+
+
+ele.timerButton.addEventListener("click", () => {
+    if( ele.timerButton.firstElementChild.innerHTML === "start") {
+        ele.timerButton.firstElementChild.innerHTML = "pause";
+        startTimer();
+    } else if (ele.timerButton.firstElementChild.innerHTML === "pause") {
+        ele.timerButton.firstElementChild.innerHTML = "start";
+        stopTimer();
+    } else if (ele.timerButton.firstElementChild.innerHTML === "restart") {
 
     }
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
