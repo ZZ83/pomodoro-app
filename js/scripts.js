@@ -1,4 +1,4 @@
-import { setInputs, toggleSettings } from './helpers.js'
+import { addClassTo, removeClassFromList, setInputs, toggleSettings } from './helpers.js'
 import { startTimer, stopTimer }     from './timer.js'
 import { setFontsAndColors }         from './fonts&colors.js'
 import { setMinutes }                from './set_minutes.js'
@@ -28,9 +28,14 @@ ele.closeSettingsButton.addEventListener("click", () => {
 })
 
 ele.applyButton.addEventListener("click", () => {
+    if(ele.timerIsRunning) {
+        ele.timerButton.firstElementChild.innerHTML = "start";
+        
+        stopTimer();
+    }
     ele.body.style.setProperty('--theme', ele.color);
     ele.body.style.setProperty('--font-family-primary', ele.font);
-    
+
     ele.minutesInputs[0].value = ele.minutesInputs[0].value;
     ele.minutesInputs[1].value = ele.minutesInputs[1].value;
     ele.minutesInputs[2].value = ele.minutesInputs[2].value;
@@ -38,7 +43,11 @@ ele.applyButton.addEventListener("click", () => {
     ele.pomodoro   = parseInt(ele.minutesInputs[0].value);
     ele.shortBreak = parseInt(ele.minutesInputs[1].value);
     ele.longBreak  = parseInt(ele.minutesInputs[2].value);
-    toggleSettings();
+
+    ele.minutes = ele.pomodoro;
+    removeClassFromList(ele.cycleButtons, "cycle-btn--active");
+    addClassTo(ele.cycleButtons[0], "cycle-btn--active");
+    toggleSettings(); 
 })
 
 ele.overlay.addEventListener("click", (event) => {
