@@ -44,7 +44,11 @@ ele.applyButton.addEventListener("click", () => {
     ele.shortBreak = parseInt(ele.minutesInputs[1].value);
     ele.longBreak  = parseInt(ele.minutesInputs[2].value);
 
-    ele.minutes = ele.pomodoro;
+    
+    ele.min.innerHTML = ele.pomodoro;
+    ele.sec.innerHTML = "00";
+
+    ele.currentCycle = parseInt(ele.pomodoro);
     removeClassFromList(ele.cycleButtons, "cycle-btn--active");
     addClassTo(ele.cycleButtons[0], "cycle-btn--active");
     toggleSettings(); 
