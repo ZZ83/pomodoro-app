@@ -9,9 +9,19 @@
     stroke-linecap: round;
     transform: rotate(-90deg);
     @extend %flex-center;
+    @keyframes dash {
+        to {
+            stroke-dashoffset: var(--progress-bar-small);
+        }
+    }
     @include mq(medium) {
         width:  rem(339px);
         height: rem(339px);
+        @keyframes dash {
+            to {
+                stroke-dashoffset: var(--progress-bar-medium);
+            }
+        }
     }
     &__svg {
         width:  100%;
@@ -28,11 +38,6 @@
         display: none;
         @include mq(medium) {
             display: initial;
-        }
-    }
-    @keyframes dash {
-        to {
-          stroke-dashoffset: 0;
         }
     }
 }

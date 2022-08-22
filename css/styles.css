@@ -324,6 +324,8 @@ template {
   --malibu: #70F3F8;
   --heliotrope: #D881F8;
   --theme: var(--heliotrope);
+  --progress-bar-small: 0;
+  --progress-bar-medium: 0;
 }
 
 .btn-wrapper, .btn, .set-minutes__up, .set-minutes__down, .timer, .progress-bar, .time-section, .time-section__background, .cycle-section, .header {
@@ -545,10 +547,20 @@ button {
   stroke-linecap: round;
   transform: rotate(-90deg);
 }
+@keyframes dash {
+  to {
+    stroke-dashoffset: var(--progress-bar-small);
+  }
+}
 @media (min-width: 768px) {
   .progress-bar {
     width: 21.1875rem;
     height: 21.1875rem;
+  }
+  @keyframes dash {
+    to {
+      stroke-dashoffset: var(--progress-bar-medium);
+    }
   }
 }
 .progress-bar__svg {
@@ -569,11 +581,6 @@ button {
 @media (min-width: 768px) {
   .progress-bar__circle--medium {
     display: initial;
-  }
-}
-@keyframes dash {
-  to {
-    stroke-dashoffset: 0;
   }
 }
 
