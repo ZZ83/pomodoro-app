@@ -35,11 +35,16 @@ export function startTimer(time) {
             currentValue = parseInt( ele.min.innerHTML );
             if (previousValue !== currentValue) {
                 previousValue = parseInt( ele.min.innerHTML );
+                const progressBarSmall  = 742;
                 const progressBarMedium = 1002;
-                let result = progressBarMedium / (ele.currentCycle / currentValue);
-                ele.body.style.setProperty('--progress-bar-medium', progressBarMedium- result);
+
+                let resultSmall  = progressBarSmall /  (ele.currentCycle / currentValue);
+                let resultMedium = progressBarMedium / (ele.currentCycle / currentValue);
+
+                ele.body.style.setProperty('--progress-bar-small',   progressBarSmall - resultSmall);
+                ele.body.style.setProperty('--progress-bar-medium', progressBarMedium - resultMedium);
             }
-        }, 100);
+        }, 10);
     }
 }
 

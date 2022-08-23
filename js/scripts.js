@@ -53,6 +53,7 @@ ele.applyButton.addEventListener("click", () => {
 
     ele.currentCycle = parseInt(ele.pomodoro);
 
+    ele.body.style.setProperty('--progress-bar-small',  0);
     ele.body.style.setProperty('--progress-bar-medium', 0);
 
     ele.minutes = ele.currentCycle;
