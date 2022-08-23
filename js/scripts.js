@@ -1,9 +1,9 @@
-import { addClassTo, removeClassFromList, setInputs, toggleSettings } from './helpers.js'
-import { startTimer, stopTimer }     from './timer.js'
-import { setFontsAndColors }         from './fonts&colors.js'
-import { setMinutes }                from './set_minutes.js'
-import { setCycles }                 from './cycles.js'
-import { ele }                       from './elements.js'
+import { setInputs, toggleSettings }  from './helpers.js'
+import { startTimer, stopTimer }      from './timer.js'
+import { setFontsAndColors }          from './fonts&colors.js'
+import { setMinutes }                 from './set_minutes.js'
+import { highlightButton, setCycles } from './cycles.js'
+import { ele }                        from './elements.js'
 
 ele.timerButton.addEventListener("click", () => {
     if( ele.timerButton.firstElementChild.innerHTML === "start") {
@@ -34,6 +34,8 @@ ele.applyButton.addEventListener("click", () => {
         
         stopTimer();
     }
+
+    // Font and Colors being used here
     ele.body.style.setProperty('--theme', ele.color);
     ele.body.style.setProperty('--font-family-primary', ele.font);
 
@@ -57,8 +59,12 @@ ele.applyButton.addEventListener("click", () => {
     ele.body.style.setProperty('--progress-bar-medium', 0);
 
     ele.minutes = ele.currentCycle;
-    removeClassFromList(ele.cycleButtons, "cycle-btn--active");
-    addClassTo(ele.cycleButtons[0], "cycle-btn--active");
+
+
+    // Cycle buttons being used here
+    highlightButton();
+
+
     toggleSettings(); 
 })
 

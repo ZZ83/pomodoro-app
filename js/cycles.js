@@ -2,11 +2,21 @@ import {addClassTo, removeClassFromList, setMinute} from './helpers.js'
 import { ele } from './elements.js'
 import { stopTimer } from './timer.js';
 
+
+const cycleButtons = document.querySelectorAll(".cycle-btn");
+
+export function highlightButton() {
+    removeClassFromList(cycleButtons, "cycle-btn--active");
+    addClassTo(cycleButtons[0], "cycle-btn--active");
+}
+
 export function setCycles() {
-    ele.cycleButtons.forEach(element => {
+    cycleButtons.forEach(element => {
         element.addEventListener("click", () => {
-            removeClassFromList(ele.cycleButtons, "cycle-btn--active");
+
+            removeClassFromList(cycleButtons, "cycle-btn--active");
             addClassTo(element, "cycle-btn--active");
+
             ele.body.style.setProperty('--progress-bar-small',  0);
             ele.body.style.setProperty('--progress-bar-medium', 0);
             if (element.innerHTML === "pomodoro") {

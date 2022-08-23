@@ -328,7 +328,7 @@ template {
   --progress-bar-medium: 0;
 }
 
-.btn-wrapper, .btn, .set-minutes__up, .set-minutes__down, .timer, .progress-bar, .time-section, .time-section__background, .cycle-section, .header {
+.btn-hover-bg, .btn, .set-minutes__up, .set-minutes__down, .timer, .progress-bar, .time-section, .time-section__background, .cycle-section, .header {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -338,7 +338,7 @@ template {
   margin: 0 auto;
 }
 
-.btn-wrapper:hover, .btn, .time-section, .time-section__background {
+.btn-hover-bg:hover, .btn, .time-section, .time-section__background {
   border-radius: 50%;
 }
 
@@ -777,11 +777,11 @@ button {
   justify-content: space-between;
 }
 
-.btn-wrapper {
+.btn-hover-bg {
   width: 3rem;
   height: 3rem;
 }
-.btn-wrapper:hover {
+.btn-hover-bg:hover {
   cursor: pointer;
   border: 2px solid #EFF1FA;
 }
@@ -808,10 +808,6 @@ button {
   font-weight: var(--font-weight--bold);
   font-family: var(--font-family-space-mono);
 }
-.btn--active {
-  color: var(--white);
-  background-color: var(--mirage);
-}
 .btn--color-froly {
   background-color: var(--froly);
 }
@@ -820,6 +816,10 @@ button {
 }
 .btn--color-heliotrope {
   background-color: var(--heliotrope);
+}
+.btn--active {
+  color: var(--white);
+  background-color: var(--mirage);
 }
 
 .apply-btn {

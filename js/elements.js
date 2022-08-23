@@ -12,7 +12,6 @@ export const ele = {
     minutes: 25,
     timer: null,
     /*********************** BUTTONS ELEMENTS ***********************/
-    cycleButtons:        document.querySelectorAll(".cycle-btn"),
     timerButton:         document.querySelector(".timer__btn"),
     openSettingsButton:  document.querySelector(".settings-btn"),
     closeSettingsButton: document.querySelector(".settings__close-btn"),

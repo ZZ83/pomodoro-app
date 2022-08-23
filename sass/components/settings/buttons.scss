@@ -1,6 +1,6 @@
 @use '../../abstracts' as *;
 
-.btn-wrapper {
+.btn-hover-bg {
     width: rem(48px);
     height: rem(48px);
     @extend %flex-center;
@@ -34,10 +34,6 @@
         font-weight: var(--font-weight--bold );
         font-family: var(--font-family-space-mono);
     } 
-    &--active {
-        color: var(--white);
-        background-color: var(--mirage);
-    }  
     &--color-froly {
         background-color: var(--froly);
     }
@@ -46,7 +42,11 @@
     }
     &--color-heliotrope {
         background-color: var(--heliotrope);
-    }   
+    }  
+    &--active {
+        color: var(--white);
+        background-color: var(--mirage);
+    }  
 }
 
 .apply-btn {

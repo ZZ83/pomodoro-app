@@ -1,35 +1,34 @@
-import {removeClassFromListC, addClassTo} from './helpers.js'
+import {removeClassFromList, addClassTo} from './helpers.js'
 import {ele} from './elements.js'
 
 const h1           = document.querySelector(".timer__time");
 const colon        = document.querySelector(".timer__colon");
-const buttons      = [...document.querySelectorAll(".btn-wrapper")];
-const fontButtons  = buttons.splice(0, 3);
-const colorButtons = buttons.splice(-3);
+const fontButtons  = document.querySelectorAll(".btn--font")
+const colorButtons = document.querySelectorAll('button[class*="btn--color"]');
 
 export function setFontsAndColors() {
     fontButtons.forEach(element => {
         element.addEventListener("click", () => {
-            if( element.firstElementChild.classList.contains("btn--kumbh") ) {
+            if( element.classList.contains("btn--kumbh") ) {
                 ele.font = "var(--font-family-kumbh-sans)";
-                removeClassFromListC(fontButtons, "btn--active")
-                addClassTo(element.firstElementChild, "btn--active")
+                removeClassFromList(fontButtons, "btn--active")
+                addClassTo(element, "btn--active")
                 h1.style.fontWeight = "700";
                 colon.style.margin = "0 5px";
                 ele.body.style.setProperty('--font-spacing', "-3px");
             }
-            if( element.firstElementChild.classList.contains("btn--roboto") ) {
+            if( element.classList.contains("btn--roboto") ) {
                 ele.font = " var(--font-family-roboto-slab)";
-                removeClassFromListC(fontButtons, "btn--active")
-                addClassTo(element.firstElementChild, "btn--active")
+                removeClassFromList(fontButtons, "btn--active")
+                addClassTo(element, "btn--active")
                 h1.style.fontWeight = "700";
                 colon.style.margin = "4px 0 0";
                 ele.body.style.setProperty('--font-spacing', 0);
             }
-            if( element.firstElementChild.classList.contains("btn--space") ) {
+            if( element.classList.contains("btn--space") ) {
                 ele.font = "var(--font-family-space-mono)";
-                removeClassFromListC(fontButtons, "btn--active")
-                addClassTo(element.firstElementChild, "btn--active")
+                removeClassFromList(fontButtons, "btn--active")
+                addClassTo(element, "btn--active")
                 h1.style.fontWeight = "400";
                 colon.style.margin= "4px -12px 0";
                 ele.body.style.setProperty('--font-spacing', 0);
@@ -38,26 +37,26 @@ export function setFontsAndColors() {
     })
     colorButtons.forEach(element => {
         element.addEventListener("click", () => {
-            if( element.firstElementChild.classList.contains("btn--color-froly") ) {
+            if( element.classList.contains("btn--color-froly") ) {
                 ele.color = "var(--froly)";
                 colorButtons.forEach(element => {
-                   element.firstElementChild.innerHTML = "";
+                   element.innerHTML = "";
                 })
-                element.firstElementChild.innerHTML = "&check;";
+                element.innerHTML = "&check;";
             }
-            if( element.firstElementChild.classList.contains("btn--color-malibu") ) {
+            if( element.classList.contains("btn--color-malibu") ) {
                 ele.color = "var(--malibu)";
                 colorButtons.forEach(element => {
-                    element.firstElementChild.innerHTML = "";
+                    element.innerHTML = "";
                  })
-                 element.firstElementChild.innerHTML = "&check;";
+                 element.innerHTML = "&check;";
             }
-            if( element.firstElementChild.classList.contains("btn--color-heliotrope") ) {
+            if( element.classList.contains("btn--color-heliotrope") ) {
                 ele.color = "var(--heliotrope)";
                 colorButtons.forEach(element => {
-                    element.firstElementChild.innerHTML = "";
+                    element.innerHTML = "";
                  })
-                 element.firstElementChild.innerHTML = "&check;";
+                 element.innerHTML = "&check;";
             }
         })  
     })
