@@ -8,6 +8,7 @@ export const ele = {
     timerIsRunning: false,
     isSettingsVisible: false,
     currentCycle: 25,
+    seconds: 59,
     minutes: 25,
     timer: null,
     /*********************** BUTTONS ELEMENTS ***********************/

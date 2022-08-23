@@ -14,6 +14,7 @@ ele.timerButton.addEventListener("click", () => {
         stopTimer();
     } else if (ele.timerButton.firstElementChild.innerHTML === "restart") {
         ele.timerButton.firstElementChild.innerHTML = "pause";
+        ele.body.style.setProperty('--progress-bar-medium', 0);
         startTimer();
     }
 })
@@ -48,7 +49,13 @@ ele.applyButton.addEventListener("click", () => {
     ele.min.innerHTML = ele.pomodoro;
     ele.sec.innerHTML = "00";
 
+    ele.seconds = 59;
+
     ele.currentCycle = parseInt(ele.pomodoro);
+
+    ele.body.style.setProperty('--progress-bar-medium', 0);
+
+    ele.minutes = ele.currentCycle;
     removeClassFromList(ele.cycleButtons, "cycle-btn--active");
     addClassTo(ele.cycleButtons[0], "cycle-btn--active");
     toggleSettings(); 
@@ -60,6 +67,12 @@ ele.overlay.addEventListener("click", (event) => {
         toggleSettings();
     }
 })
+
+
+
+
+
+
 
 setCycles();
 setMinutes();
