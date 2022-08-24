@@ -2,7 +2,7 @@ import { setInputs, toggleSettings }  from './helpers.js'
 import { startTimer, stopTimer }      from './timer.js'
 import { setFontsAndColors }          from './fonts&colors.js'
 import { setMinutes }                 from './set_minutes.js'
-import { highlightButton, setCycles } from './cycles.js'
+import { setActiveButton, setCycles } from './cycles.js'
 import { ele }                        from './elements.js'
 
 ele.timerButton.addEventListener("click", () => {
@@ -31,40 +31,27 @@ ele.closeSettingsButton.addEventListener("click", () => {
 ele.applyButton.addEventListener("click", () => {
     if(ele.timerIsRunning) {
         ele.timerButton.firstElementChild.innerHTML = "start";
-        
         stopTimer();
     }
 
-    // Font and Colors being used here
     ele.body.style.setProperty('--theme', ele.color);
     ele.body.style.setProperty('--font-family-primary', ele.font);
+    
+    ele.body.style.setProperty('--progress-bar-small',  0);
+    ele.body.style.setProperty('--progress-bar-medium', 0);
 
     ele.minutesInputs[0].value = ele.minutesInputs[0].value;
     ele.minutesInputs[1].value = ele.minutesInputs[1].value;
     ele.minutesInputs[2].value = ele.minutesInputs[2].value;
-
     ele.pomodoro   = parseInt(ele.minutesInputs[0].value);
     ele.shortBreak = parseInt(ele.minutesInputs[1].value);
     ele.longBreak  = parseInt(ele.minutesInputs[2].value);
-
-    
     ele.min.innerHTML = ele.pomodoro;
     ele.sec.innerHTML = "00";
-
     ele.seconds = 59;
-
     ele.currentCycle = parseInt(ele.pomodoro);
-
-    ele.body.style.setProperty('--progress-bar-small',  0);
-    ele.body.style.setProperty('--progress-bar-medium', 0);
-
     ele.minutes = ele.currentCycle;
-
-
-    // Cycle buttons being used here
-    highlightButton();
-
-
+    setActiveButton();
     toggleSettings(); 
 })
 
@@ -74,12 +61,6 @@ ele.overlay.addEventListener("click", (event) => {
         toggleSettings();
     }
 })
-
-
-
-
-
-
 
 setCycles();
 setMinutes();
