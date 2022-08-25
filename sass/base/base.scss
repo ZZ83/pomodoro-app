@@ -80,7 +80,8 @@ input {
     font-weight: var(--font-weight--bold);
 }
 
-svg {
+svg,
+path {
     pointer-events: none;
 }
 

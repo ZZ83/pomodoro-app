@@ -29,5 +29,6 @@
     &__close-btn {
         cursor: pointer;
         margin-top: rem(4px);
+        pointer-events: initial;
     }
 }
