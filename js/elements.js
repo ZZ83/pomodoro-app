@@ -13,9 +13,6 @@ export const ele = {
     timer: null,
     /*********************** BUTTONS ELEMENTS ***********************/
     timerButton:         document.querySelector(".timer__btn"),
-    openSettingsButton:  document.querySelector(".settings-btn"),
-    closeSettingsButton: document.querySelector(".settings__close-btn"),
-    applyButton:         document.querySelector(".apply-btn"),
     /*********************** STANDARD ELEMENTS ***********************/
     min:           document.querySelector(".time__min"),
     sec:           document.querySelector(".time__sec"),

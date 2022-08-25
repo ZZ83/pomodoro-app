@@ -8,10 +8,19 @@
         display: flex;
     }
     &__btn {
-        margin: 0;
-        padding: rem(5px) 0 0;
+        padding-top: rem(5px);
+        margin-right: rem(-15px);
+        letter-spacing: rem(15px);
+        color: var(--periwinkle);
+        font-size:   rem(14px);
+        line-height: rem(19px);
+        text-transform: uppercase;
+        &:hover {
+            color: var(--theme);
+        }
         @include mq(medium) {
-            padding: rem(20px) 0 0;
+            padding-top: rem(20px);
+            font-size: rem(16px);
         }
     }
     &__align {

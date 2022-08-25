@@ -41,21 +41,6 @@ h2 {
     }
 }
 
-h3 {
-    color: var(--periwinkle);
-    font-size:   rem(14px);
-    line-height: rem(19px);
-    letter-spacing: rem(15px);
-    margin-right: rem(-15px);
-    text-transform: uppercase;
-    @include mq(medium) {
-        font-size: rem(16px);
-    }
-    &:hover {
-        color: var(--theme);
-    }
-}
-
 h4 {
     font-size:   rem(11px);
     line-height: rem(16px);
@@ -80,6 +65,7 @@ input {
     font-weight: var(--font-weight--bold);
 }
 
+h3,
 svg,
 path {
     pointer-events: none;

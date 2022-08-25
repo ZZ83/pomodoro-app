@@ -2,15 +2,16 @@ import {addClassTo, removeClassFromList, setMinute} from './helpers.js'
 import { ele } from './elements.js'
 import { stopTimer } from './timer.js';
 
+const cycleButtons = document.querySelectorAll(".cycle-btn");
+const cycleSection = document.querySelector(".cycle-section");
+
 export function setActiveButton() {
     removeClassFromList(cycleButtons, "cycle-btn--active");
     addClassTo(cycleButtons[0], "cycle-btn--active");
 }
 
-const cycleButtons = document.querySelectorAll(".cycle-btn");
-const cycleSection = document.querySelector(".cycle-section");
 function test(para) {
-    ele.timerButton.firstElementChild.innerHTML = "start";
+    ele.timerButton.innerHTML = "start";
     setMinute(para, ele.min);
     ele.minutes = para;
     ele.sec.innerHTML = "00";

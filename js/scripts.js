@@ -1,24 +1,21 @@
 import { setInputsValues, toggleSettings, setMinutes }  from './helpers.js'
-import { startTimer, stopTimer }      from './timer.js'
-import { setFontsAndColors }          from './fonts&colors.js'
-import { setActiveButton } from './cycles.js'
-import { ele }                        from './elements.js'
+import { startTimer, stopTimer } from './timer.js'
+import { setFontsAndColors }     from './fonts&colors.js'
+import { setActiveButton }       from './cycles.js'
+import { ele }                   from './elements.js'
 
-// DOM elements
 const main        = document.querySelector("main");
 const minutes     = document.querySelector(".minutes");
+const applyButton = document.querySelector(".apply-btn");
 
 main.addEventListener("click", (event) => {
-    // Open settings
     if(event.target.classList.contains("settings-btn")) {
         toggleSettings();
     }
-    // Close settings
     if(event.target.classList.contains("settings__close-btn")) {
         setInputsValues();
         toggleSettings();
     }
-    // Close settings when over is clicked
     if(event.target.classList.contains("overlay")) {
         if(event.target.tagName === "DIV" &&  event.target.className === "overlay") {
             setInputsValues();
@@ -31,24 +28,22 @@ minutes.addEventListener("click", (event) => {
     setMinutes(event);
 });
 
-
 ele.timerButton.addEventListener("click", () => {
-    if( ele.timerButton.firstElementChild.innerHTML === "start") {
-        ele.timerButton.firstElementChild.innerHTML = "pause";
+    if( ele.timerButton.innerHTML === "start") {
+        ele.timerButton.innerHTML = "pause";
         startTimer();
-    } else if (ele.timerButton.firstElementChild.innerHTML === "pause") {
-        ele.timerButton.firstElementChild.innerHTML = "start";
+    } else if (ele.timerButton.innerHTML === "pause") {
+        ele.timerButton.innerHTML = "start";
         stopTimer();
-    } else if (ele.timerButton.firstElementChild.innerHTML === "restart") {
-        ele.timerButton.firstElementChild.innerHTML = "pause";
-        ele.body.style.setProperty('--progress-bar-medium', 0);
+    } else if (ele.timerButton.innerHTML === "restart") {
+        ele.timerButton.innerHTML = "pause";
         startTimer();
     }
 })
 
-ele.applyButton.addEventListener("click", () => {
+applyButton.addEventListener("click", () => {
     if(ele.timerIsRunning) {
-        ele.timerButton.firstElementChild.innerHTML = "start";
+        ele.timerButton.innerHTML = "start";
         stopTimer();
     }
     ele.setTest();

@@ -24,7 +24,7 @@ export function startTimer() {
             sec.innerHTML = ele.seconds.toString();
             ele.minutes = parseFloat(ele.minutes);
             if (ele.seconds === "00" && ele.minutes == "00" ) {
-                ele.timerButton.firstElementChild.innerHTML = "restart";
+                ele.timerButton.innerHTML = "restart";
                 stopTimer();
                 ele.seconds = 59;
                 ele.minutes = ele.currentCycle;
@@ -46,7 +46,7 @@ export function startTimer() {
                 ele.body.style.setProperty('--progress-bar-medium', progressBarMedium - resultMedium);
             }
             
-        }, 100);
+        }, 10);
     }
 }
 
