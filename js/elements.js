@@ -30,7 +30,7 @@ export const ele = {
     resetProgressBar: function() {
         this.body.style.setProperty('--progress-bar-small',  0);
         this.body.style.setProperty('--progress-bar-medium', 0);
-    }
+    },
 }
 
 

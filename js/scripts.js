@@ -2,7 +2,7 @@ import { setInputs, toggleSettings }  from './helpers.js'
 import { startTimer, stopTimer }      from './timer.js'
 import { setFontsAndColors }          from './fonts&colors.js'
 import { setMinutes }                 from './set_minutes.js'
-import { setActiveButton, setCycles } from './cycles.js'
+import { } from './cycles.js'
 import { ele }                        from './elements.js'
 
 ele.timerButton.addEventListener("click", () => {
@@ -64,7 +64,7 @@ ele.overlay.addEventListener("click", (event) => {
     }
 })
 
-setCycles();
+
 setMinutes();
 setFontsAndColors();
 
