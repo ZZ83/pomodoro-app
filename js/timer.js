@@ -34,6 +34,7 @@ export function startTimer() {
                 ele.minutes --;
             }
             ele.seconds --;
+
             currentValue = parseInt( ele.min.innerHTML );
             if (previousValue !== currentValue) {
                 previousValue = parseInt( ele.min.innerHTML );
@@ -44,6 +45,7 @@ export function startTimer() {
                 ele.body.style.setProperty('--progress-bar-small',   progressBarSmall - resultSmall);
                 ele.body.style.setProperty('--progress-bar-medium', progressBarMedium - resultMedium);
             }
+            
         }, 100);
     }
 }

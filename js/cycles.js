@@ -14,8 +14,7 @@ export function setCycles() {
         element.addEventListener("click", () => {
             removeClassFromList(cycleButtons, "cycle-btn--active");
             addClassTo(element, "cycle-btn--active");
-            ele.body.style.setProperty('--progress-bar-small',  0);
-            ele.body.style.setProperty('--progress-bar-medium', 0);
+            ele.resetProgressBar();
             if (element.innerHTML === "pomodoro") {
                 ele.timerButton.firstElementChild.innerHTML = "start";
                 setMinute(ele.pomodoro, ele.min);

@@ -9,6 +9,7 @@ const colorButtons = document.querySelectorAll('button[class*="btn--color"]');
 export function setFontsAndColors() {
     fontButtons.forEach(element => {
         element.addEventListener("click", () => {
+
             if( element.classList.contains("btn--kumbh") ) {
                 ele.font = "var(--font-family-kumbh-sans)";
                 removeClassFromList(fontButtons, "btn--active")
@@ -33,6 +34,7 @@ export function setFontsAndColors() {
                 colon.style.margin= "4px -12px 0";
                 ele.body.style.setProperty('--font-spacing', 0);
             }
+            
         })  
     })
     colorButtons.forEach(element => {

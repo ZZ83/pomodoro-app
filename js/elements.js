@@ -22,7 +22,19 @@ export const ele = {
     body:          document.querySelector("body"),
     overlay:       document.querySelector(".overlay"),
     minutesInputs: document.querySelectorAll(".set-minutes__input"),
+    /*********************** METHODS ***********************/
+    setTest: function() {
+        this.body.style.setProperty('--theme', this.color);
+        this.body.style.setProperty('--font-family-primary', this.font);
+    },
+    resetProgressBar: function() {
+        this.body.style.setProperty('--progress-bar-small',  0);
+        this.body.style.setProperty('--progress-bar-medium', 0);
+    }
 }
+
+
+   
 
 
 

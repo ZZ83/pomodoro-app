@@ -430,6 +430,10 @@ input {
   font-weight: var(--font-weight--bold);
 }
 
+svg {
+  pointer-events: none;
+}
+
 button {
   margin: 0;
   padding: 0;
