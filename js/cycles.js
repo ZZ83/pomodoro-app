@@ -1,4 +1,4 @@
-import {addClassTo, removeClassFromList, setMinute} from './helpers.js'
+import {addClassTo, removeClassFromList, addLeadingZeros} from './helpers.js'
 import { ele } from './elements.js'
 import { stopTimer } from './timer.js';
 
@@ -10,13 +10,13 @@ export function setActiveButton() {
     addClassTo(cycleButtons[0], "cycle-btn--active");
 }
 
-function test(para) {
+function setCycle(cycle) {
     ele.timerButton.innerHTML = "start";
-    setMinute(para, ele.min);
-    ele.minutes = para;
+    ele.min.innerHTML = addLeadingZeros(cycle);
+    ele.minutes = cycle;
     ele.sec.innerHTML = "00";
     ele.seconds = 59;
-    ele.currentCycle = parseInt(para);
+    ele.currentCycle = parseInt(cycle);
     ele.resetProgressBar();
     stopTimer();
 }
@@ -26,11 +26,11 @@ cycleSection.addEventListener("click", (event) => {
         removeClassFromList(cycleButtons, "cycle-btn--active");
         addClassTo(event.target, "cycle-btn--active");
         if (event.target.innerHTML === "pomodoro") {
-            test(ele.pomodoro);
+            setCycle(ele.pomodoro);
         } else if (event.target.innerHTML === "short break") {
-            test(ele.shortBreak);
+            setCycle(ele.shortBreak);
         } else if (event.target.innerHTML === "long break") {
-            test(ele.longBreak);
+            setCycle(ele.longBreak);
         }
     }
 })

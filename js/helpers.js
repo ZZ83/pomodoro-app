@@ -15,17 +15,10 @@ export function removeClassFromList(list, klass) {
 };
 
 export function addLeadingZeros(num) {
-    return "0" + num.toString()
-}
-
-
-
-
-export function setMinute(minutes, element) {
-    if (minutes < 10) {
-        element.innerHTML = addLeadingZeros(minutes);
+    if (num < 10) {
+        return "0" + num.toString()
     } else {
-        element.innerHTML = minutes;
+        return num;
     }
 }
 
