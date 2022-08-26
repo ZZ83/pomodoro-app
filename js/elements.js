@@ -20,7 +20,7 @@ export const ele = {
     overlay:       document.querySelector(".overlay"),
     minutesInputs: document.querySelectorAll(".set-minutes__input"),
     /*********************** METHODS ***********************/
-    setTest: function() {
+    addFontsAndColors: function() {
         this.body.style.setProperty('--theme', this.color);
         this.body.style.setProperty('--font-family-primary', this.font);
     },

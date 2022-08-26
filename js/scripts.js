@@ -46,7 +46,7 @@ applyButton.addEventListener("click", () => {
         ele.timerButton.innerHTML = "start";
         stopTimer();
     }
-    ele.setTest();
+    ele.addFontsAndColors();
     ele.resetProgressBar();
     ele.minutesInputs[0].value = ele.minutesInputs[0].value;
     ele.minutesInputs[1].value = ele.minutesInputs[1].value;
