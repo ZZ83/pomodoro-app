@@ -323,7 +323,7 @@ template {
   --froly: #F87070;
   --malibu: #70F3F8;
   --heliotrope: #D881F8;
-  --theme: var(--heliotrope);
+  --theme: var(--froly);
   --progress-bar-small: 0;
   --progress-bar-medium: 0;
 }
