@@ -3,9 +3,10 @@ import { startTimer, stopTimer } from './timer.js'
 import { setFontsAndColors }     from './fonts&colors.js'
 import { setActiveButton }       from './cycles.js'
 import { ele }                   from './elements.js'
+import './set-minutes.js'
 
 const main        = document.querySelector("main");
-const minutes     = document.querySelector(".minutes");
+
 const applyButton = document.querySelector(".apply-btn");
 
 main.addEventListener("click", (event) => {
@@ -24,9 +25,7 @@ main.addEventListener("click", (event) => {
     }
 })
 
-minutes.addEventListener("click", (event) => { 
-    setMinutes(event);
-});
+
 
 ele.timerButton.addEventListener("click", () => {
     if( ele.timerButton.innerHTML === "start") {
@@ -67,5 +66,3 @@ setFontsAndColors();
 
 
 
-
- 
