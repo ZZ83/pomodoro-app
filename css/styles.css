@@ -314,7 +314,6 @@ template {
   --font-family-primary: var(--font-family-kumbh-sans);
   --font-weight--regular: 400;
   --font-weight--bold: 700;
-  --font-spacing: -2px;
   --white: #FFFFFF;
   --mirage: #161932;
   --port-gore: #1E213F;
@@ -368,7 +367,7 @@ h5 {
 h1 {
   height: 6.4375rem;
   font-size: 5rem;
-  letter-spacing: var(--font-spacing);
+  letter-spacing: -0.125rem;
 }
 @media (min-width: 768px) {
   h1 {

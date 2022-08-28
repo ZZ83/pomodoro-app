@@ -26,7 +26,7 @@ h5 {
 h1 {
     height: rem(103px);
     font-size: rem(80px);
-    letter-spacing: var(--font-spacing);
+    letter-spacing: rem(-2px);
     @include mq(medium) {
         height: rem(128px);
         font-size: rem(100px);

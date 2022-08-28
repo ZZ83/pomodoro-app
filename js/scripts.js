@@ -1,12 +1,11 @@
-import { setInputsValues, toggleSettings, setMinutes, addLeadingZeros }  from './helpers.js'
+import { setInputsValues, toggleSettings, addLeadingZeros }  from './helpers.js'
 import { startTimer, stopTimer } from './timer.js'
-import { setFontsAndColors }     from './fonts&colors.js'
 import { setActiveButton }       from './cycles.js'
 import { ele }                   from './elements.js'
+import { setFontAndColor }       from './fonts-colors.js'
 import './set-minutes.js'
 
 const main        = document.querySelector("main");
-
 const applyButton = document.querySelector(".apply-btn");
 
 main.addEventListener("click", (event) => {
@@ -24,8 +23,6 @@ main.addEventListener("click", (event) => {
         }
     }
 })
-
-
 
 ele.timerButton.addEventListener("click", () => {
     if( ele.timerButton.innerHTML === "start") {
@@ -45,7 +42,7 @@ applyButton.addEventListener("click", () => {
         ele.timerButton.innerHTML = "start";
         stopTimer();
     }
-    ele.addFontsAndColors();
+    setFontAndColor();
     ele.resetProgressBar();
     ele.minutesInputs[0].value = ele.minutesInputs[0].value;
     ele.minutesInputs[1].value = ele.minutesInputs[1].value;
@@ -61,8 +58,6 @@ applyButton.addEventListener("click", () => {
     setActiveButton();
     toggleSettings(); 
 })
-
-setFontsAndColors();
 
 
 
