@@ -3,14 +3,25 @@ import { ele } from './elements.js'
 
 let previousValue;
 let currentValue;
+
 const min  = document.querySelector(".time__min");
 const sec  = document.querySelector(".time__sec");
+
+export function stopTimer() {
+    clearInterval(ele.timer);
+    ele.timerIsRunning = false;
+}
+
+export function resetTimersText(val) {
+    min.innerHTML = addLeadingZeros(val);
+    sec.innerHTML = "00";
+}
 
 function startTimer() {
     if(ele.timerIsRunning === false) {
         ele.timerIsRunning = true;
         ele.timer = setInterval(function() { 
-            if(ele.currentCycle === parseInt(ele.min.innerHTML)) {
+            if(ele.currentCycle === parseInt(min.innerHTML)) {
                 ele.minutes -= 1;
             }
             if (ele.seconds < 10) {
@@ -33,10 +44,9 @@ function startTimer() {
                 ele.minutes --;
             }
             ele.seconds --;
-
-            currentValue = parseInt( ele.min.innerHTML );
+            currentValue = parseInt( min.innerHTML );
             if (previousValue !== currentValue) {
-                previousValue = parseInt( ele.min.innerHTML );
+                previousValue = parseInt( min.innerHTML );
                 const progressBarSmall  = 742;
                 const progressBarMedium = 1002;
                 let resultSmall  = progressBarSmall /  (ele.currentCycle / currentValue);
@@ -45,13 +55,8 @@ function startTimer() {
                 ele.body.style.setProperty('--progress-bar-medium', progressBarMedium - resultMedium);
             }
             
-        }, 10);
+        }, 1000);
     }
-}
-
-export function stopTimer() {
-    clearInterval(ele.timer);
-    ele.timerIsRunning = false;
 }
 
 ele.timerButton.addEventListener("click", () => {

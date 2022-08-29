@@ -1,6 +1,6 @@
-import {addClassTo, removeClassFromList, addLeadingZeros} from './helpers.js'
-import { ele } from './elements.js'
-import { stopTimer } from './timer.js';
+import {addClassTo, removeClassFromList} from './helpers.js'
+import { stopTimer, resetTimersText}     from './timer.js';
+import { ele }                           from './elements.js'
 
 const cycleButtons = document.querySelectorAll(".cycle-btn");
 const cycleSection = document.querySelector(".cycle-section");
@@ -12,12 +12,11 @@ export function setActiveButton() {
 
 function setCycle(cycle) {
     ele.timerButton.innerHTML = "start";
-    ele.min.innerHTML = addLeadingZeros(cycle);
     ele.minutes = cycle;
-    ele.sec.innerHTML = "00";
     ele.seconds = 59;
     ele.currentCycle = parseInt(cycle);
     ele.resetProgressBar();
+    resetTimersText(cycle)
     stopTimer();
 }
 

@@ -9,17 +9,17 @@ const settings     = document.querySelector(".settings");
 const fontButtons  = document.querySelectorAll(".btn--font")
 const colorButtons = document.querySelectorAll('button[class*="btn--color"]');
 
+export function setFontAndColor() {
+    ele.body.style.setProperty('--theme', color);
+    ele.body.style.setProperty('--font-family-primary', font);
+}
+
 function setColor(event, colors) {
     color = colors;
     colorButtons.forEach(element => {
        element.innerHTML = "";
     })
     event.target.innerHTML = "&check;";
-}
-
-export function setFontAndColor() {
-    ele.body.style.setProperty('--theme', color);
-    ele.body.style.setProperty('--font-family-primary', font);
 }
 
 settings.addEventListener("click", (event) => {
