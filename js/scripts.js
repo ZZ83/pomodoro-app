@@ -1,28 +1,13 @@
-import { setInputsValues, toggleSettings, addLeadingZeros }  from './helpers.js'
+import { addLeadingZeros }  from './helpers.js'
 import { stopTimer } from './timer.js'
 import { setActiveButton }       from './cycles.js'
 import { ele }                   from './elements.js'
 import { setFontAndColor }       from './fonts-colors.js'
 import './set-minutes.js'
+import {toggleSettings} from './toggleSettings.js'
 
-const main        = document.querySelector("main");
+
 const applyButton = document.querySelector(".apply-btn");
-
-main.addEventListener("click", (event) => {
-    if(event.target.classList.contains("settings-btn")) {
-        toggleSettings();
-    }
-    if(event.target.classList.contains("settings__close-btn")) {
-        setInputsValues();
-        toggleSettings();
-    }
-    if(event.target.classList.contains("overlay")) {
-        if(event.target.tagName === "DIV" &&  event.target.className === "overlay") {
-            setInputsValues();
-            toggleSettings();
-        }
-    }
-})
 
 applyButton.addEventListener("click", () => {
     if(ele.timerIsRunning) {
