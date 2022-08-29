@@ -1,13 +1,12 @@
 import { addLeadingZeros} from './helpers.js'
 import { ele } from './elements.js'
 
-const min   = document.querySelector(".time__min");
-const sec   = document.querySelector(".time__sec");
-
 let previousValue;
 let currentValue;
+const min  = document.querySelector(".time__min");
+const sec  = document.querySelector(".time__sec");
 
-export function startTimer() {
+function startTimer() {
     if(ele.timerIsRunning === false) {
         ele.timerIsRunning = true;
         ele.timer = setInterval(function() { 
@@ -54,3 +53,16 @@ export function stopTimer() {
     clearInterval(ele.timer);
     ele.timerIsRunning = false;
 }
+
+ele.timerButton.addEventListener("click", () => {
+    if( ele.timerButton.innerHTML === "start") {
+        ele.timerButton.innerHTML = "pause";
+        startTimer();
+    } else if (ele.timerButton.innerHTML === "pause") {
+        ele.timerButton.innerHTML = "start";
+        stopTimer();
+    } else if (ele.timerButton.innerHTML === "restart") {
+        ele.timerButton.innerHTML = "pause";
+        startTimer();
+    }
+})

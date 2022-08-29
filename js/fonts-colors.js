@@ -3,7 +3,6 @@ import {ele} from './elements.js'
 
 let font  = "";
 let color = "";
-
 const h1           = document.querySelector(".timer__time");
 const colon        = document.querySelector(".timer__colon");
 const settings     = document.querySelector(".settings");

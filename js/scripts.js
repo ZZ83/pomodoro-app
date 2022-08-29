@@ -1,5 +1,5 @@
 import { setInputsValues, toggleSettings, addLeadingZeros }  from './helpers.js'
-import { startTimer, stopTimer } from './timer.js'
+import { stopTimer } from './timer.js'
 import { setActiveButton }       from './cycles.js'
 import { ele }                   from './elements.js'
 import { setFontAndColor }       from './fonts-colors.js'
@@ -21,19 +21,6 @@ main.addEventListener("click", (event) => {
             setInputsValues();
             toggleSettings();
         }
-    }
-})
-
-ele.timerButton.addEventListener("click", () => {
-    if( ele.timerButton.innerHTML === "start") {
-        ele.timerButton.innerHTML = "pause";
-        startTimer();
-    } else if (ele.timerButton.innerHTML === "pause") {
-        ele.timerButton.innerHTML = "start";
-        stopTimer();
-    } else if (ele.timerButton.innerHTML === "restart") {
-        ele.timerButton.innerHTML = "pause";
-        startTimer();
     }
 })
 

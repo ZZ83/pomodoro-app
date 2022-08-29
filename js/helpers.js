@@ -37,15 +37,3 @@ export function setInputsValues() {
     ele.minutesInputs[1].value = ele.shortBreak;
     ele.minutesInputs[2].value = ele.longBreak;
 }
-
-export function setMinutes(event) {
-    if(event.target.tagName === "BUTTON")  {
-        const input = event.target.parentElement.previousElementSibling;
-        if( event.target.classList.contains("set-minutes__up") && input.value !== "90" ) {
-            parseInt(input.value ++);
-        }
-        if( event.target.classList.contains("set-minutes__down") && input.value !== "1" ) {
-            parseInt(input.value --);
-        } 
-    }
-}
