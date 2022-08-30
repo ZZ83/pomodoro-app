@@ -412,6 +412,10 @@ input {
   font-weight: var(--font-weight--bold);
 }
 
+input:disabled {
+  color: inherit;
+}
+
 h3,
 svg,
 path {
