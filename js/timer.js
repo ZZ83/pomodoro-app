@@ -56,7 +56,7 @@ function startTimer() {
                 ele.body.style.setProperty('--progress-bar-medium', progressBarMedium - resultMedium);
             }
             
-        }, 10);
+        }, 1000);
     }
 }
 
