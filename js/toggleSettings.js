@@ -1,8 +1,8 @@
 import { ele } from './elements.js'
 
 let isSettingsVisible = false;
-const main    = document.querySelector("main");
-const overlay = document.querySelector(".overlay");
+const main     = document.querySelector("main");
+const overlay  = document.querySelector(".overlay");
 
 export function toggleSettings() {
     if (isSettingsVisible) {
