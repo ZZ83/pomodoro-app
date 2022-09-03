@@ -12,6 +12,7 @@ export function setActiveButton() {
 
 function setCycle(cycle) {
     ele.timerButton.innerHTML = "start";
+    ele.timerButton.setAttribute("aria-label", "Start timer");
     ele.minutes = cycle;
     ele.seconds = 59;
     ele.currentCycle = parseInt(cycle);

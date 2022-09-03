@@ -35,6 +35,7 @@ function startTimer() {
             ele.minutes = parseFloat(ele.minutes);
             if (ele.seconds === "00" && ele.minutes == "00" ) {
                 ele.timerButton.innerHTML = "restart";
+                ele.timerButton.setAttribute("aria-label", "Restart timer");
                 stopTimer();
                 ele.seconds = 59;
                 ele.minutes = ele.currentCycle;
@@ -55,19 +56,22 @@ function startTimer() {
                 ele.body.style.setProperty('--progress-bar-medium', progressBarMedium - resultMedium);
             }
             
-        }, 1000);
+        }, 10);
     }
 }
 
 ele.timerButton.addEventListener("click", () => {
     if( ele.timerButton.innerHTML === "start") {
         ele.timerButton.innerHTML = "pause";
+        ele.timerButton.setAttribute("aria-label", "Pause timer");
         startTimer();
     } else if (ele.timerButton.innerHTML === "pause") {
         ele.timerButton.innerHTML = "start";
+        ele.timerButton.setAttribute("aria-label", "Start timer");
         stopTimer();
     } else if (ele.timerButton.innerHTML === "restart") {
         ele.timerButton.innerHTML = "pause";
+        ele.timerButton.setAttribute("aria-label", "Pause timer");
         startTimer();
     }
 })
